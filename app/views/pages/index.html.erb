@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row elements">
+    <%= render partial: "page", collection: @pages %>
+  </div>
+
+  <% if @pages.blank? %>
+    <div class="first_alert">
+    <p>グループでシェアする<a data-toggle="modal" href="#myModal">ページを保存 <span class="glyphicon glyphicon-modal-window" aria-hidden="true"></span></a>しましょう！</p>
+    </div>
+  <% end %>
+
+  <!-- モーダル開始 -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" data-dismiss="modal">&times;</button>
+          <p class="modal-title">ページを保存する</p>
+        </div>
+        <%= form_for [@group, @page] do |f| %>
+          <div class="modal-body">
+              <%= f.text_field :url, autofocus: true, :placeholder => 'http://...' %>
+          </div>
+          <div class="modal-footer">
+              <%= f.submit "保存" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <!-- モーダル終了 -->
+
+<!-- 
+  <div>
+  <%#= form_for [@group, @page] do |f| %>
+    <h3>
+      ページを追加する
+    </h3>
+    <%#= f.text_field :url, autofocus: true %>
+    <%#= f.submit "追加" %>
+  <%# end %>
+  </div> -->
+
+</div>

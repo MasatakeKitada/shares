@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row elements">
+    <%= render partial: "group", collection: @groups %>
+  </div>
+
+  <% if @groups.blank? %>
+    <div class="first_alert">
+      <p>まずは、<a data-toggle="modal" href="#myModal">グループを追加する</a>か、友達に招待してもらいましょう！</p>
+    </div>
+  <% end %>
+ <!--    <div class="new_group partial">
+      <div class="title group_name">
+          <%#= link_to "/" do %>
+          <div class="background_image" style="background-image: url(<%#= image_tag('no_image.png') %>)">
+          <div class="background_image">
+            <p>新規グループを作成</p>
+            </div>
+          </div>
+
+          <div>
+            <li class="group_delete">
+            <%#= link_to "/groups/#{group.id}", method: :delete do %>
+            <span class="glyphicon glyphicon-trash" aria-hidden="true" style="color: white;" ></span>
+            <%# end %>
+              </li>
+          </div>
+          <%# end %>
+        </div>
+      </div>
+  <%# end %> -->
+
+  <!-- モーダル開始 -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" data-dismiss="modal">&times;</button>
+          <p class="modal-title">グループを追加する</p>
+        </div>
+
+       		<%= form_for @group do |f| %>
+            <div class="modal-body">
+      		    <%= f.text_field :name, autofocus: true, :placeholder => 'グループ名', html: {class: "form-controll" } %>
+      		    <%= f.file_field :avatar, html: {class: "form-controll" } %>
+      		  </div>
+            <div class="modal-footer">
+      		    <%= f.submit "追加", html: {class: "btn btn-default" } %>
+            </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+  <!-- モーダル終了 -->
+</div>

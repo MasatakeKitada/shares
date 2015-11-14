@@ -1,0 +1,9 @@
+<div class="container">
+  <%= form_for [@group, @page] do |f| %>
+    <h3>
+      ページを追加する
+    </h3>
+    <%= f.text_field :url, autofocus: true %>
+    <%= f.submit "追加" %>
+  <% end %>
+</div>

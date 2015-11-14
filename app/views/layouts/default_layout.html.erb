@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shares</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<header class="header_container">
+<nav class="navbar">
+  <div class="container-fluid container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="logo"><a href="/">Shares!</a></div>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right navi">
+        <% if controller.controller_name == "groups" %>
+          <li><a data-toggle="modal" href="#myModal">グループを追加する</a></li>
+        <% elsif controller.controller_name == "pages" %>
+          <li>
+            <%#= link_to 'ページを追加する', "/groups/#{@group.id}/pages/new/" %>
+            <a data-toggle="modal" href="#myModal">ページを保存する
+            </a>
+          </li>
+          <li>
+            <%= link_to 'メンバー一覧', "/groups/#{@group.id}/users" %>
+          </li>
+          <li>
+            <%= link_to 'メンバー追加', "/groups/#{@group.id}/users/invite/" %>
+          </li>
+        <% elsif controller.controller_name == "users" %>
+          <li>
+            <%= link_to 'メンバー追加', "/groups/#{@group.id}/users/invite/" %>
+          </li>
+        <% end %>
+        <li>
+          <%= link_to 'サインアウト',  destroy_user_session_path, method: :delete %>
+        </li>
+      </ul>
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+</header>
+
+<%= yield %>
+
+<footer class="footer_container">
+  <!-- <p>copyright2015</p> -->
+</footer>
+
+</body>
+</html>
+

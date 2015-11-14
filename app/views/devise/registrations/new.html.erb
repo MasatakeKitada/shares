@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shares</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body class="wide_screen">
+    <div class="devise_container signup">
+    <h2>
+      <p class="devise">Sign up</p>
+    </h2>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+      <!-- <div class="form-horizontal"> -->
+        <div class="form-group"><%= f.label :Nickname, class: "controll-label" %><br />
+          <%= f.text_field :nickname, autofocus: true, :placeholder => 'Nickname', class: "form-controll" %></div>
+      <!-- </div> -->
+      <!-- <div class="form-horizontal"> -->
+        <div class="form-group">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, :placeholder => 'e-mail' %>
+        <!-- </div> -->
+      </div>
+        <div class="form-group">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "off", :placeholder => 'password' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off", :placeholder => 'password' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :profile_image %><br />
+          <%= f.file_field :avatar, autofocus: true, value: "" %>
+        </div>
+
+          <div class="form-group">
+            <%= f.submit "Sign up", class: "btn btn-default" %>
+          </div>
+      <% end %>
+      <div class="devise">
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+    <footer class="footer_container">
+      <!-- <p>copyright2015</p> -->
+    </footer>
+
+  </body>
+</html>

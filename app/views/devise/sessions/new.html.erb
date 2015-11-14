@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shares</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body class="wide_screen clearfix">
+    <div class="message">
+      <div><h1>Shares!</h1></div>
+      <div class="service_message">
+        <p>
+          友達、同僚との情報共有に困ったことありませんか？<br>
+          Shares!を使って、スムーズな情報共有を楽しみましょう。<br>
+        </p>
+      </div>
+    </div>
+
+
+    <div class="devise_container">
+<!--       <h2>
+      <p class="devise">Login</p>
+      </h2> -->
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-group">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password %><br />
+          <%= f.password_field :password, autocomplete: "off" %>
+        </div>
+
+        <% if devise_mapping.rememberable? -%>
+          <div class="form-group">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end -%>
+
+        <div class="form-group">
+          <%= f.submit "Log in" %>
+        </div>
+      <% end %>
+
+      <div class="devise">
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+    <footer class="footer_container">
+      <!-- <p>copyright2015</p> -->
+    </footer>
+
+  </body>
+</html>

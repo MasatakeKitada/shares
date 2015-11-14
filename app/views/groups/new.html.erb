@@ -1,0 +1,10 @@
+<div class="container group_container">
+  <%= form_for @group do |f| %>
+    <h3>
+      グループを追加する
+    </h3>
+    <%= f.text_field :name, autofocus: true, :placeholder => 'グループ名', html: {class: "form-controll" } %>
+    <%= f.file_field :avatar, html: {class: "form-controll" } %>
+    <%= f.submit "追加", html: {class: "btn btn-default" } %>
+  <% end %>
+</div>

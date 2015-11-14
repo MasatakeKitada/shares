@@ -1,0 +1,21 @@
+<div class="container user_container">
+  <%= form_tag("/groups/#{@group.id}/users/invite", method: :get) do %>
+    <h2>ニックネームで検索</h2>
+    <input type="text", placeholder="Nicknameを入力", name="nickname">
+    <input type="submit" value="search">
+  <% end %>
+
+  <p class="search_result">検索結果</p>
+  <% @users.each do |user| %>
+    <div class="user clearfix">
+    <div class="user_partial_invite col-xs-4">
+      <div class="user_image"><%= image_tag("#{user.avatar(:thumb)}") %><br /></div>
+      <div class="user_name"><%= user.nickname %></div>
+      <%= form_tag("/groups/#{@group.id}/users/add", method: :post) do %> <!-- userのidとgroupのidを連携 -->
+        <%= hidden_field_tag(:user_id, user.id) %>
+        <%= submit_tag("追加する") %>
+      <% end %>
+    </div>
+    </div>
+  <% end %>
+</div>

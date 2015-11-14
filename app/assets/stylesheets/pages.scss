@@ -1,0 +1,47 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.page {
+  position: relative;
+}
+
+.partial .page {
+  width: 345px;
+  height: 250px;
+  margin: 10px 10px 0 10px;
+}
+
+.partial .page_title {
+  width: 360px;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 14px;
+  background-color: #ffffff;
+  opacity: 0.9;
+  position: absolute;
+  bottom: 0;
+}
+
+.partial .page_title a {
+  color: #000000;
+}
+
+.partial .page_title a:hover {
+  text-decoration: underline;
+}
+
+.elements {
+  margin: 0 auto;
+}
+
+.page_delete {
+  list-style: none;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}

@@ -1,0 +1,12 @@
+<div class="partial page col-sm-4" style="background-image: url(<%= page.image_url %>); background-size: cover;">
+  <div class="title page_title">
+    <%= link_to "#{page.title}", "#{page.url}", target: "_blank" %>
+  </div>
+    <div>
+    	<li class="page_delete">
+    	<%= link_to "/groups/#{@group.id}/pages/#{page.id}", method: :delete do %>
+			<span class="glyphicon glyphicon-trash" aria-hidden="true" style="color: white;"></span>
+    	<% end %>
+        </li>
+    </div>
+</div>

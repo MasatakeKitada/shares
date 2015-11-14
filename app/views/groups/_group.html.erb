@@ -1,0 +1,22 @@
+<div class="partial col-sm-4">
+  <div class="title group_name">
+    <%= link_to "/groups/#{group.id}/pages" do %>
+    <% if  group.avatar_file_name %>
+    <div class="background_image" style="background-image: url(<%= group.avatar(:medium) %>)">
+    <% else %>
+	<div class"background_no_image" style="background-image: url('/images/no_image.png'); background-size: cover; width: 370px; height: 250px; background-position: center">
+	<% end %>
+	  <div class="background_image">
+      <p><%= group.name %></p>
+      </div>
+    </div>
+    <div>
+    	<li class="group_delete">
+    	<%= link_to "/groups/#{group.id}", method: :delete do %>
+			<span class="glyphicon glyphicon-trash" aria-hidden="true" style="color: white;" ></span>
+    	<% end %>
+        </li>
+    </div>
+    <% end %>
+  </div>
+</div>
