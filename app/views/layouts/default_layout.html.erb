@@ -42,6 +42,9 @@
           </li>
         <% elsif controller.controller_name == "users" %>
           <li>
+            <%= link_to 'メンバー一覧', "/groups/#{@group.id}/users" %>
+          </li>
+          <li>
             <%= link_to 'メンバー追加', "/groups/#{@group.id}/users/invite/" %>
           </li>
         <% end %>

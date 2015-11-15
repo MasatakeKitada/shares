@@ -9,6 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body class="wide_screen clearfix">
+    <div class="row">
+    <div class="message_wrapper col-sm-6 col-xs-12">
     <div class="message">
       <div><h1>Shares!</h1></div>
       <div class="service_message">
@@ -18,8 +20,8 @@
         </p>
       </div>
     </div>
-
-
+    </div>
+    <div class="devise_wrapper col-sm-6 col-xs-12">
     <div class="devise_container">
 <!--       <h2>
       <p class="devise">Login</p>
@@ -42,8 +44,8 @@
           </div>
         <% end -%>
 
-        <div class="form-group">
-          <%= f.submit "Log in" %>
+        <div class="form-group form_btn">
+          <%= f.submit "ログイン" %>
         </div>
       <% end %>
 
@@ -51,6 +53,8 @@
         <%= render "devise/shared/links" %>
       </div>
     </div>
+    </div>
+
     <footer class="footer_container">
       <!-- <p>copyright2015</p> -->
     </footer>

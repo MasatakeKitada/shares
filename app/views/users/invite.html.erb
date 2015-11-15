@@ -2,7 +2,7 @@
   <%= form_tag("/groups/#{@group.id}/users/invite", method: :get) do %>
     <h2>ニックネームで検索</h2>
     <input type="text", placeholder="Nicknameを入力", name="nickname">
-    <input type="submit" value="search">
+    <label><span class="glyphicon glyphicon-search" aria-hidden="true"><input type="submit" value="" id="search"></span></label>
   <% end %>
 
   <p class="search_result">検索結果</p>

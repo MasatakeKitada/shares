@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row elements">
+  <div class="row page_elements">
     <%= render partial: "page", collection: @pages %>
   </div>
 
@@ -40,5 +40,7 @@
     <%#= f.submit "追加" %>
   <%# end %>
   </div> -->
-
+  <div class="plus_btn">
+  <a data-toggle="modal" href="#myModal"><%= image_tag'plus.png' %></a>
+  </div>
 </div>
