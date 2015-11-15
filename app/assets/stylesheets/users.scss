@@ -65,3 +65,37 @@
 // .user_delete {
 //   list-style: none;
 // }
+
+
+.user_delete {
+  width: 100px;
+  border: 1px solid;
+  border-radius: 5px;
+  background-color: transparent;
+  padding: 3px 12px;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.user_delete a {
+  color: #000000;
+}
+
+.user_delete a:hover {
+  color: #000000;
+  text-decoration: none;
+}
+
+.user input {
+  width: 100px;
+  border: 1px solid;
+  border-radius: 5px;
+  background-color: transparent;
+  padding: 3px 12px;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+#search {
+  display: none;
+}

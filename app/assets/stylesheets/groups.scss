@@ -29,8 +29,7 @@
 .partial .group_name p {
   width: 370px;
   color: #000000;
-  font-weight: bold;
-  font-size: 18px;
+  font-size: 15px;
   text-align: center;
   background-color: #ffffff;
   opacity: 0.8;
@@ -42,7 +41,9 @@
 }
 
 .group_name p:hover {
-  color: #18bc9c;
+  // color: #18bc9c;
+  color: #000000;
+  text-decoration: underline;
 }
 
 .group_delete {
@@ -61,6 +62,38 @@
   margin: 30px 0 50px 0;
 }
 
-// .new_group {
-//   background-color: red;
-// }
+.plus_btn img {
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+}
+
+@media (max-width:767px) {
+  .partial {
+  width: 340px;
+  height: 250px;
+  // margin: 10px 10px 0 10px;
+  margin: 0 auto;
+  }
+
+  .partial .group_name .background_image {
+  width: 340px;
+  height: 250px;
+  }
+
+  .partial .group_name p {
+  width: 340px;
+  // color: #000000;
+  // font-size: 15px;
+  // text-align: center;
+  // background-color: #ffffff;
+  // opacity: 0.8;
+  // position: absolute;
+  // bottom: 0;
+  // padding-top: 5px;
+  // padding-bottom: 5px;
+  // margin-bottom: -0.5px;
+  }
+}

@@ -2,13 +2,15 @@
 <html>
   <head>
     <title>Shares</title>
+    <link href='https://fonts.googleapis.com/css?family=Fugaz+One' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body class="wide_screen">
-    <div class="devise_container signup">
+    <div class="devise_wrapper col-xs-12">
+    <div class="devise_container_signup">
     <h2>
       <p class="devise">Sign up</p>
     </h2>
@@ -42,13 +44,14 @@
           <%= f.file_field :avatar, autofocus: true, value: "" %>
         </div>
 
-          <div class="form-group">
-            <%= f.submit "Sign up", class: "btn btn-default" %>
+          <div class="form-group form_btn">
+            <%= f.submit "Sign up" %>
           </div>
       <% end %>
-      <div class="devise">
+      <div class="devise form_btn">
         <%= render "devise/shared/links" %>
       </div>
+    </div>
     </div>
     <footer class="footer_container">
       <!-- <p>copyright2015</p> -->

@@ -35,7 +35,7 @@
   text-decoration: underline;
 }
 
-.elements {
+.page_elements {
   margin: 0 auto;
 }
 
@@ -45,3 +45,46 @@
   top: 5px;
   right: 5px;
 }
+
+.plus_btn img {
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+}
+
+@media (max-width:767px) {
+  .partial .page_title {
+    width: 340px;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 12px;
+    background-color: #ffffff;
+    opacity: 0.9;
+    position: absolute;
+    bottom: 0;
+  }
+
+  .partial .page {
+  width: 345px;
+  height: 250px;
+  margin: 0 auto;
+  margin-top: 10px;
+  }
+
+  .partial {
+  width: 340px;
+  height: 250px;
+  margin: 0px;
+  margin-top: 10px;
+  }
+}
+
+
+
+

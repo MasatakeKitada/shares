@@ -44,11 +44,15 @@
       		    <%= f.file_field :avatar, html: {class: "form-controll" } %>
       		  </div>
             <div class="modal-footer">
-      		    <%= f.submit "追加", html: {class: "btn btn-default" } %>
+      		    <%= f.submit "追加" %>
             </div>
           <% end %>
       </div>
     </div>
   </div>
   <!-- モーダル終了 -->
+
+  <div class="plus_btn">
+  <a data-toggle="modal" href="#myModal"><%= image_tag'plus.png' %></a>
+  </div>
 </div>
