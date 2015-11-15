@@ -25,6 +25,9 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<!--       <div class="avatar">
+        <%#= image_tag("#{current_user.avatar(:thumb)}") %>
+      </div> -->
       <ul class="nav navbar-nav navbar-right navi">
         <% if controller.controller_name == "groups" %>
           <li><a data-toggle="modal" href="#myModal">グループを追加する</a></li>
@@ -42,6 +45,9 @@
           </li>
         <% elsif controller.controller_name == "users" %>
           <li>
+            <%= link_to 'ページ一覧', "/groups/#{@group.id}/pages" %>
+          </li>
+          <li>
             <%= link_to 'メンバー一覧', "/groups/#{@group.id}/users" %>
           </li>
           <li>
@@ -52,6 +58,9 @@
           <%= link_to 'サインアウト',  destroy_user_session_path, method: :delete %>
         </li>
       </ul>
+      <div class="name">
+        <p><span><%= current_user.nickname %></span>さんのマイページ</p>
+      </div>
 
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

@@ -183,11 +183,44 @@ allication.html.erbのcss
   line-height: 2
 }*/
 
+/*.avatar {
+  float: right;
+  width: 70px;
+  height: 70px;
+}
+
+.avatar img {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+}*/
+
+.name {
+  float: right;
+  margin-top: 20px;
+  margin-right: 10px;
+}
+
+.name p {
+  font-size: 15px;
+}
+
+.name span {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+@media (max-width:767px) {
+  .name {
+    display: none;
+  }
+}
+
+
+
 /*----------------------------
 allication.html.erbのcss終わり
 -----------------------------*/
-
-
 
 html {
   height: 100%;
