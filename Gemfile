@@ -49,6 +49,4 @@ end
   gem 'mechanize'
   gem 'paperclip'
   gem 'devise'
-  gem 'omniauth'
-  gem 'omniauth-facebook'
   gem 'rails_12factor'
