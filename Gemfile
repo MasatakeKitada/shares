@@ -49,4 +49,3 @@ end
   gem 'mechanize'
   gem 'paperclip'
   gem 'devise'
-  gem 'rails_12factor'

@@ -3,9 +3,5 @@
 	<div class="user_image"><%= image_tag("#{user.avatar(:thumb)}") %></div>
 	<div class="user_name"><%= user.nickname %></div>
 
-    <div>
-    	<button class="user_delete">
-    	<%= link_to '削除する', "/groups/#{@group.id}/users/#{user.id}", method: :delete %>
-        </button>
-    </div>
+   	<%= button_to '削除する', "/groups/#{@group.id}/users/#{user.id}", method: :delete, class: "user_delete" %>
 </div>

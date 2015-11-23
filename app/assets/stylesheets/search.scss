@@ -1,0 +1,24 @@
+.page {
+  width: 345px;
+  height: 250px;
+  margin: 15px 10px 0 10px;
+}
+
+.search_page_title {
+  width: 345px;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 14px;
+  background-color: #ffffff;
+  opacity: 0.9;
+  position: absolute;
+  bottom: 0;
+}
+
+.search_page_title a {
+  color: #000000;
+}

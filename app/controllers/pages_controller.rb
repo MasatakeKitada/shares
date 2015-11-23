@@ -20,12 +20,14 @@ class PagesController < LayoutController
   end
 
   def destroy
-    @group = Group.find(params[:group_id])
+    # @group = Group.find(params[:group_id])
     page = Page.find(params[:id])
     page.destroy
     redirect_to action: :index
   end
 
+  def search
+  end
 
   private
   def page_params

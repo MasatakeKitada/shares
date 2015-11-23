@@ -13,7 +13,7 @@
 }
 
 .partial .group_name {
-  width: 370px;
+  width: 360px;
   height: 250px;
   margin-left: -15px;
   margin-right: -15px;
@@ -23,11 +23,11 @@
 
 .partial .group_name .background_image {
   height: 250px;
-  width: 370px;
+  width: 360px;
 }
 
 .partial .group_name p {
-  width: 370px;
+  width: 360px;
   color: #000000;
   font-size: 15px;
   text-align: center;
@@ -70,6 +70,13 @@
   bottom: 30px;
 }
 
+.background_no_image {
+  background-size: cover;
+  width: 360px;
+  height: 250px;
+  background-position: center;
+}
+
 @media (max-width:767px) {
   .partial {
   width: 340px;
@@ -95,5 +102,12 @@
   // padding-top: 5px;
   // padding-bottom: 5px;
   // margin-bottom: -0.5px;
+  }
+
+  .background_no_image {
+  background-size: cover;
+  width: 340px;
+  height: 250px;
+  background-position: center
   }
 }

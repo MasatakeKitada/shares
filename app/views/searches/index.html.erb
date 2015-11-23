@@ -1,0 +1,18 @@
+<div class="container">
+  <%= form_tag("/page_search/", method: :get) do %>
+    <h2>キーワードで検索</h2>
+    <input type="text", placeholder="キーワードを入力", name="title">
+    <label><input type="submit" value="" id="search"></label>
+  <% end %>
+
+  <p class="search_result">検索結果</p>
+  <div class="search_partial"></div>
+  <% @pages.each do |page| %>
+	<div class="page col-xs-4" style="background-image: url(<%= page.image_url %>); background-size: cover;">
+	  <div class="search_page_title">
+	    <%= link_to "#{page.title}", "#{page.url}", target: "_blank" %>
+	  </div>
+	</div>
+  <% end %>
+  </div>
+</div>

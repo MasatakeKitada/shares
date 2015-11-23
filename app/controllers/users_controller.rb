@@ -17,7 +17,6 @@ class UsersController < LayoutController
   end
 
   def destroy
-    @group = Group.find(params[:group_id])
     user = UsersGroup.find_by(user_id: params[:id], group_id: params[:group_id])
     user.destroy
     redirect_to action: :index
