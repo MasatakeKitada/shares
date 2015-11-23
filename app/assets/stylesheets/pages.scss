@@ -29,6 +29,12 @@
 
 .partial .page_title a {
   color: #000000;
+  width: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .partial .page_title a:hover {
@@ -84,16 +90,3 @@
   margin-top: 10px;
   }
 }
-
-
-.search_partial .page {
-  width: 360px;
-  height: 250px;
-}
-
-.search_container {
-  width: 1100px;
-  margin: 0 auto;
-}
-
-
