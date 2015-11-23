@@ -1,7 +1,10 @@
 class SearchesController < LayoutController
 
 	def index
-		@pages = Page.where('title LIKE(?)', "%#{params[:title]}%")
+	end
+
+	def search
+		@pages = Page.where('title LIKE(?)', "%#{params[:title]}%").group(:title)
 	end
 
 end

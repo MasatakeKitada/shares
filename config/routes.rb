@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'groups#index'
-  get 'page_search' => 'searches#index'
+
+  resources :searches, only: :index do
+    collection do
+      get 'search'
+    end
+  end
 
   resources :groups, only: [:index, :show, :create, :destroy] do
     resources :pages, only: [:index, :show, :create, :destroy]
