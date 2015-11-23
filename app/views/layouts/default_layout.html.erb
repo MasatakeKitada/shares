@@ -32,7 +32,7 @@
         <% if controller.controller_name == "groups" %>
           <li><a data-toggle="modal" href="#myModal">グループを追加する</a></li>
           <li>
-            <%= link_to '記事検索', "/page_search/" %>
+            <%= link_to '記事検索', "/searches/" %>
           </li>
         <% elsif controller.controller_name == "pages" %>
           <li>
@@ -58,7 +58,7 @@
           </li>
         <% elsif controller.controller_name == "search" %>
           <li>
-            <%= link_to '記事検索', "/page_search/" %>
+            <%= link_to '記事検索', "/searches/" %>
           </li>
         <% end %>
         <li>
