@@ -86,10 +86,11 @@
 }
 
 .keyword input {
-  border: 1px solid #74757F;
+  border: 1px solid #8F9FAD;
   width: 200px;
   margin-left: 20px;
-  padding-left: 25px;
+  padding-left: 27px;
+  border-radius: 25px;
 }
 
 .keyword_search {
@@ -99,10 +100,10 @@
 /* style icon */
 .keyword_search .glyphicon {
   position: absolute;
-  padding-left: 27px;
-  padding-top: 10px;
+  padding-left: 30px;
+  padding-top: 9px;
   pointer-events: none;
-  color: #74757F;
+  color: #8F9FAD;
 }
 
 
