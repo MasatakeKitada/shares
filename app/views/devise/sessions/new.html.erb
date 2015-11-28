@@ -49,6 +49,12 @@
         </div>
       <% end %>
 
+      <div class="facebook_login">
+      <%= link_to user_omniauth_authorize_path(:facebook) do %>
+      <%= image_tag 'https://www.vetshq.com/rails/assets/facebook-login-button-0edd7189f09e073f6dd098a55cbab45b.png' %>
+      <% end %>
+      </div>
+
       <div class="devise">
         <%= render "devise/shared/links" %>
       </div>
