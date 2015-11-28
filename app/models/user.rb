@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :avatar,
   content_type: ["image/jpeg", "image/jpg", "image/png"]
 
+  #Facebook Setting
+
   def self.find_for_oauth(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first
 
