@@ -1,0 +1,103 @@
+html body {
+  height: 100%;
+}
+
+.wide_screen {
+  background-image: url('/images/wide_image.jpg');
+  /* 画像を常に天地左右の中央に配置 */
+  background-position: center center;
+  /* 画像をタイル状に繰り返し表示しない */
+  background-repeat: no-repeat;
+  /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+  background-attachment: fixed;
+  /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+  background-size: cover;
+  /*position: relative;*/
+  /*position: fixed;*/
+}
+
+.message h1 {
+  font-size: 60px;
+  color: #ffffff;
+  font-weight: bold;
+  font-family: 'Fugaz One', cursive;
+  margin: 0;
+  margin-left: 25px;
+}
+
+.devise_container {
+  background-color: #ffffff;
+  opacity: 0.9;
+  /*width: 250px;*/
+  /*float: right;*/
+  margin-top: 150px;
+  /*margin-right: 250px;*/
+  padding: 10px 80px 10px 80px;
+  display: inline-block;
+}
+
+.devise_container_signup {
+  background-color: #ffffff;
+  opacity: 0.9;
+  /*width: 250px;*/
+  /*float: right;*/
+  margin-top: 100px;
+  margin-bottom: 50px;
+  /*margin-right: 250px;*/
+  padding: 10px 40px 30px 40px;
+  display: inline-block;
+}
+
+.message {
+  /*width: 400px;*/
+  padding-top: 150px;
+  /*margin-left:250px;*/
+  /*float: left;*/
+  display: inline-block;
+}
+
+.service_message p {
+  color: #ffffff;
+  margin-left: 25px;
+  margin-top: 30px;
+}
+
+@media (max-width:767px) {
+  .message {
+  padding-top: 80px;
+  }
+
+  .devise_container {
+    margin-top: 50px;
+  }
+
+  html body {
+    height: auto;
+  }
+}
+
+.message_wrapper {
+  text-align: center;
+}
+
+.devise_wrapper {
+  text-align: center;
+}
+
+.form_btn input, .form_btn a {
+  width: 152px;
+  border: 1px solid;
+  border-radius: 5px;
+  background-color: transparent;
+  padding: 3px 12px;
+  font-size: 12px;
+}
+
+.modal-footer input {
+  width: 152px;
+  border: 1px solid;
+  border-radius: 5px;
+  background-color: transparent;
+  padding: 3px 12px;
+  font-size: 12px;
+}
