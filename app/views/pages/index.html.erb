@@ -1,6 +1,7 @@
 <div class="container">
   <div class="row page_elements">
     <%= render partial: "page", collection: @pages %>
+    <%= paginate @pages %>
   </div>
 
   <% if @pages.blank? %>
