@@ -51,3 +51,4 @@ end
   gem 'devise'
   gem 'omniauth'
   gem 'omniauth-facebook'
+  gem 'config'
