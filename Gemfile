@@ -52,3 +52,4 @@ end
   gem 'omniauth'
   gem 'omniauth-facebook'
   gem 'config'
+  gem 'kaminari'
