@@ -22,6 +22,7 @@ class User < ActiveRecord::Base
       user = User.create(
         uid:      auth.uid,
         provider: auth.provider,
+        nickname:     auth.info.name,
         email:    User.dummy_email(auth),
         password: Devise.friendly_token[0, 20]
       )
