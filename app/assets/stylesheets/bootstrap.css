@@ -210,6 +210,28 @@ allication.html.erbのcss
   font-size: 18px;
 }
 
+/*.keyword {
+  margin-top: 13px;
+}
+
+.keyword input {
+  border-radius: 5px;
+  border: 1px solid #000000;
+  text-align: center;
+}*/
+
+li.search span {
+  zoom: 1.3;
+  padding-top: 3px;
+}
+
+li.search a {
+  border: none!important;
+}
+
+li.search a:hover {
+  color: transparent!important;
+}
 @media (max-width:767px) {
   .name {
     display: none;

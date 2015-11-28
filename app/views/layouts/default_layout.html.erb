@@ -30,10 +30,21 @@
       </div> -->
       <ul class="nav navbar-nav navbar-right navi">
         <% if controller.controller_name == "groups" %>
-          <li><a data-toggle="modal" href="#myModal">グループを追加する</a></li>
-          <li>
-            <%= link_to '記事検索', "/searches/" %>
+<!--           <li class="keyword">
+            <%#= link_to '記事検索', "/searches/" %>
+            <%#= form_tag("/searches/search", method: :get) do %>
+              <input type="text", placeholder="キーワードから検索", name="title">
+              <label><input type="submit" value="" id="search"></label>
+            <#% end %>
+          </li> -->
+          <li class="search">
+            <a data-toggle="modal" href="#myModal_search">
+              <span class="glyphicon glyphicon-search" aria-hidden="true" style="color: black;"></span>
+            </a>
           </li>
+          <li><a data-toggle="modal" href="#myModal">グループを追加する</a>
+          </li>
+
         <% elsif controller.controller_name == "pages" %>
           <li>
             <%#= link_to 'ページを追加する', "/groups/#{@group.id}/pages/new/" %>
@@ -56,9 +67,11 @@
           <li>
             <%= link_to 'メンバー追加', "/groups/#{@group.id}/users/invite/" %>
           </li>
-        <% elsif controller.controller_name == "search" %>
-          <li>
-            <%= link_to '記事検索', "/searches/" %>
+        <% elsif controller.controller_name == "searches" %>
+          <li class="search">
+            <a data-toggle="modal" href="#myModal_search">
+              <span class="glyphicon glyphicon-search" aria-hidden="true" style="color: black;"></span>
+            </a>
           </li>
         <% end %>
         <li>
