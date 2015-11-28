@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
 
   #Facebook Setting
 
+
   def self.find_for_oauth(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first
 
