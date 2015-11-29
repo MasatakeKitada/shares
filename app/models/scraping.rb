@@ -17,6 +17,8 @@ class Scraping
     page = group.pages.where(title: title).first_or_initialize(image_url: got_url)
     page.url = page_params[:url]
     page.save
+
+    #return Page.last
     # page = Page.where(title: title).first_or_initialize
     # page.image_url = got_url
     # page.url = page_params[:url]
