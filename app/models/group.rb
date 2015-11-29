@@ -1,7 +1,7 @@
 class Group < ActiveRecord::Base
 
   has_attached_file :avatar,
-  styles: {medium: "370x250#"}
+  styles: {medium: "370x250#", thumb: "90x90#"}
 
   validates_attachment_content_type :avatar,
   content_type: ["image/jpg", "image/jpeg", "image/png"]
