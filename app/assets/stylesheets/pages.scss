@@ -42,6 +42,17 @@
   text-decoration: underline;
 }
 
+.avatar_image {
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
+}
+
+.avatar_image img {
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+}
 
 .page_elements {
   margin: 0 auto;

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151129060942) do
+ActiveRecord::Schema.define(version: 20151129083712) do
 
   create_table "groups", force: :cascade do |t|
     t.string   "name",                limit: 255
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20151129060942) do
     t.integer  "group_id",   limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id",    limit: 4
   end
 
   create_table "users", force: :cascade do |t|
@@ -62,6 +63,13 @@ ActiveRecord::Schema.define(version: 20151129060942) do
   create_table "users_groups", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
     t.integer  "group_id",   limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users_pages", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.integer  "page_id",    limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
   end
