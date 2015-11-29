@@ -71,6 +71,15 @@
 }
 
 @media (max-width:767px) {
+  .page_partial {
+    height: 250px;
+    margin: 0 auto;
+  }
+
+  .page_page {
+    height: 100%;
+  }
+  
   .page_partial .page_title {
     width: 100%;
     padding-left: 15px;
@@ -84,12 +93,4 @@
     bottom: 0;
   }
 
-  .page_partial {
-    height: 250px;
-    margin: 0 auto;
-  }
-
-  .page_page {
-    height: 100%;
-  }
 }

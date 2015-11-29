@@ -2,32 +2,38 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.group_container {
-  text-align: center;
+// .group_container {
+//   text-align: center;
+// }
+.group_elements {
+  margin: 0 auto;
 }
 
-.partial {
-  width: 360px;
+.group_partial {
   height: 250px;
-  margin: 10px 10px 0 10px;
+  //margin: 10px 10px 0 10px;
+  padding: 10px;
 }
 
-.partial .group_name {
-  width: 360px;
-  height: 250px;
-  margin-left: -15px;
-  margin-right: -15px;
-  padding-left: 15px;
-  padding-right: 15px;
+.group_page {
+  position: relative;
+  height: 100%;
 }
 
-.partial .group_name .background_image {
-  height: 250px;
-  width: 360px;
+.group_page .background_image {
+  width: 100%;
+  height: 100%;
 }
 
-.partial .group_name p {
-  width: 360px;
+.background_no_image {
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+}
+
+.group_page p {
+  width: 100%;
   color: #000000;
   font-size: 15px;
   text-align: center;
@@ -40,7 +46,7 @@
   margin-bottom: -0.5px;
 }
 
-.group_name p:hover {
+.group_page p:hover {
   // color: #18bc9c;
   color: #000000;
   text-decoration: underline;
@@ -50,7 +56,7 @@
   list-style: none;
   position: absolute;
   top: 5px;
-  right: 0;
+  right: 5px;
 }
 
 .first_alert {
@@ -70,13 +76,6 @@
   bottom: 30px;
 }
 
-.background_no_image {
-  background-size: cover;
-  width: 360px;
-  height: 250px;
-  background-position: center;
-}
-
 #myModal_search form {
   text-align: center;
   margin-bottom: 20px;
@@ -84,20 +83,18 @@
 
 
 @media (max-width:767px) {
-  .partial {
-  width: 340px;
+  .group_partial {
   height: 250px;
-  // margin: 10px 10px 0 10px;
   margin: 0 auto;
   }
 
-  .partial .group_name .background_image {
-  width: 340px;
+  .group_partial .group_page .background_image {
+  //width: 340px;
   height: 250px;
   }
 
-  .partial .group_name p {
-  width: 340px;
+  .group_partial .group_page p {
+  //width: 340px;
   // color: #000000;
   // font-size: 15px;
   // text-align: center;
@@ -112,7 +109,7 @@
 
   .background_no_image {
   background-size: cover;
-  width: 340px;
+  //width: 340px;
   height: 250px;
   background-position: center
   }
