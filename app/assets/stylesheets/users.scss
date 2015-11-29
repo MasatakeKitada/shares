@@ -96,6 +96,26 @@
   margin-top: 10px;
 }
 
+.user_keyword {
+  position: relative;
+}
+
+.user_keyword input {
+  border: 1px solid #8F9FAD;
+  width: 200px;
+  margin-left: 20px;
+  padding-left: 27px;
+  border-radius: 25px;
+}
+
+.user_keyword .glyphicon {
+  position: absolute;
+  padding-left: 30px;
+  padding-top: 4px;
+  pointer-events: none;
+  color: #8F9FAD;
+}
+
 #search {
   display: none;
 }
