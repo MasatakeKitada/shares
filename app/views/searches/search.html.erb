@@ -3,13 +3,20 @@
     <p class="search_result">検索結果</p>
     <% if !@pages.blank? %>
     <% @pages.each do |page| %>
+
     <div class="search_partial col-sm-4 col-xs-12">
-    	<div class="search_page" style="background-image: url(<%= page.image_url %>); background-size: cover;">
-    	  <div class="search_page_title">
-    	    <%= link_to "#{page.title}", "#{page.url}", target: "_blank" %>
-    	  </div>
-    	</div>
+      <a href="<%= page.url %>" target="_blank" class="search_page" style="background-image: url(<%= page.image_url %>); background-size: cover;">
+    <div class="search_page_title">
+      <p><%= page.title %></p>
     </div>
+
+<!--     	<div class="search_page" style="background-image: url(<%#= page.image_url %>); background-size: cover;">
+    	  <div class="search_page_title">
+    	    <%#= link_to "#{page.title}", "#{page.url}", target: "_blank" %>
+    	  </div>
+    	</div> -->
+    </div>
+    </a>
     <% end %>
     <% elsif @pages.blank? %>
     <div style="text-align: center;">
