@@ -19,12 +19,14 @@ class User < ActiveRecord::Base
   def self.find_for_oauth(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first
 
+    fb_image_tag = auth.info.image #facebookから取る画像情報を一旦変数で定義
+
     unless user
       user = User.create(
         uid:      auth.uid,
         provider: auth.provider,
         nickname: auth.info.name,
-        avatar_file_name:   auth.info.image,
+        fb_image:   fb_image_tag + "?type=large", #画像URLに文字列を加えることで、サイズの大きい画像を取得
         email:    User.dummy_email(auth),
         password: Devise.friendly_token[0, 20]
       )
