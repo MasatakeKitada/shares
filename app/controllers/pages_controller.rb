@@ -16,6 +16,10 @@ class PagesController < LayoutController
   def create
     Scraping.page_titles(page_params)
     # Page.create(page_params)
+    # UsersPage.create(user_id: current_user.id, page_id: page.id)
+    page = Page.last
+    page.user_id = current_user.id
+    page.save
     redirect_to action: :index
   end
 
