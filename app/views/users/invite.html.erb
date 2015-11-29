@@ -1,8 +1,11 @@
 <div class="container user_container">
   <%= form_tag("/groups/#{@group.id}/users/invite", method: :get) do %>
-    <h2>ニックネームで検索</h2>
-    <input type="text", placeholder="Nicknameを入力", name="nickname">
-    <label><span class="glyphicon glyphicon-search" aria-hidden="true"><input type="submit" value="" id="search"></span></label>
+    <h2>ユーザー名で検索</h2>
+    <div class="user_keyword">
+      <i class="glyphicon glyphicon-search"></i>
+      <input type="text", placeholder="ユーザー名を入力", name="nickname">
+      <input type="submit" value="" id="search">
+    </div>
   <% end %>
 
   <p class="search_result">検索結果</p>

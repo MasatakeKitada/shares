@@ -4,6 +4,10 @@
   padding: 10px;
 }
 
+.search_partial>a {
+  display: block;
+}
+
 .search_page {
   position: relative;
   height: 100%;
@@ -22,15 +26,20 @@
   bottom: 0;
 }
 
-.search_page_title a {
+.search_page_title p {
   color: #000000;
   height: 100%;
   width: 100%;
+  margin-bottom: 0;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.search_partial .search_page_title p:hover {
+  text-decoration: underline;
 }
 
 .search_elements {
