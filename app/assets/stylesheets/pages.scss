@@ -2,20 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.page {
-  position: relative;
-}
-
-.partial .page {
-  width: 345px;
+.page_partial {
   height: 250px;
-  margin: 15px 10px 0 10px;
+  // margin: 15px 10px 0 10px;
+  padding: 10px;
 }
 
-.partial .page_title {
-  width: 345px;
-  margin-left: -15px;
-  margin-right: -15px;
+.page_page {
+  position: relative;
+  height: 100%;
+}
+
+.page_partial .page_title {
+  width: 100%;
   padding-left: 15px;
   padding-right: 15px;
   padding-top: 5px;
@@ -27,7 +26,7 @@
   bottom: 0;
 }
 
-.partial .page_title a {
+.page_partial .page_title a {
   color: #000000;
   height: 100%;
   width: 100%;
@@ -38,14 +37,15 @@
   text-overflow: ellipsis;
 }
 
-.partial .page_title a:hover {
+.page_partial .page_title a:hover {
   text-decoration: underline;
 }
 
-.avatar_image img {
+.page_avatar_image img {
   width: 30px;
   height: 30px;
   margin-top: 10px;
+  margin-left: 10px;
   border-radius: 30px;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
@@ -71,10 +71,8 @@
 }
 
 @media (max-width:767px) {
-  .partial .page_title {
-    width: 340px;
-    margin-left: -15px;
-    margin-right: -15px;
+  .page_partial .page_title {
+    width: 100%;
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 5px;
@@ -86,17 +84,12 @@
     bottom: 0;
   }
 
-  .partial .page {
-  width: 345px;
-  height: 250px;
-  margin: 0 auto;
-  margin-top: 10px;
+  .page_partial {
+    height: 250px;
+    margin: 0 auto;
   }
 
-  .partial {
-  width: 340px;
-  height: 250px;
-  margin: 0px;
-  margin-top: 10px;
+  .page_page {
+    height: 100%;
   }
 }
