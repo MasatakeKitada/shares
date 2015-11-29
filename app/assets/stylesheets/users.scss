@@ -103,6 +103,7 @@
 .user_keyword input {
   border: 1px solid #8F9FAD;
   width: 200px;
+  height: 30px;
   margin-left: 20px;
   padding-left: 27px;
   border-radius: 25px;
@@ -111,7 +112,7 @@
 .user_keyword .glyphicon {
   position: absolute;
   padding-left: 30px;
-  padding-top: 4px;
+  padding-top: 8px;
   pointer-events: none;
   color: #8F9FAD;
 }
