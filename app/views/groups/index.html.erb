@@ -1,6 +1,11 @@
 <div class="container">
   <div class="row group_elements">
     <%= render partial: "group", collection: @groups %>
+    <div class="group_partial col-sm-3 col-xs-12">
+      <div class="create_group">
+         <a data-toggle="modal" href="#myModal">Create New Group</a>
+      </div>
+    </div>
   </div>
 
   <% if @groups.blank? %>
