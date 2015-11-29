@@ -1,13 +1,16 @@
-.page {
-  width: 345px;
+.search_partial {
   height: 250px;
-  margin: 15px 10px 0 10px;
+  // margin: 15px 10px 0 10px;
+  padding: 10px;
+}
+
+.search_page {
+  position: relative;
+  height: 100%;
 }
 
 .search_page_title {
-  width: 345px;
-  margin-left: -15px;
-  margin-right: -15px;
+  width: 100%;
   padding-left: 15px;
   padding-right: 15px;
   padding-top: 5px;
@@ -21,4 +24,15 @@
 
 .search_page_title a {
   color: #000000;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.search_elements {
+  margin: 0 auto;
 }

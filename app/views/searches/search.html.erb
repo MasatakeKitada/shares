@@ -1,21 +1,24 @@
 <div class="container">
-  <p class="search_result">検索結果</p>
-  <div class="search_partial"></div>
-  <% if !@pages.blank? %>
-  <% @pages.each do |page| %>
-	<div class="page col-xs-4" style="background-image: url(<%= page.image_url %>); background-size: cover;">
-	  <div class="search_page_title">
-	    <%= link_to "#{page.title}", "#{page.url}", target: "_blank" %>
-	  </div>
-	</div>
-  <% end %>
-  <% elsif @pages.blank? %>
-  <div style="text-align: center;">
-  <p>検索結果は0件です。もう一度<a data-toggle="modal" href="#myModal_search">検索</a>してみましょう。</p>
+  <div class="row search_elements">
+    <p class="search_result">検索結果</p>
+    <% if !@pages.blank? %>
+    <% @pages.each do |page| %>
+    <div class="search_partial col-sm-4 col-xs-12">
+    	<div class="search_page" style="background-image: url(<%= page.image_url %>); background-size: cover;">
+    	  <div class="search_page_title">
+    	    <%= link_to "#{page.title}", "#{page.url}", target: "_blank" %>
+    	  </div>
+    	</div>
+    </div>
+    <% end %>
+    <% elsif @pages.blank? %>
+    <div style="text-align: center;">
+    <p>検索結果は0件です。もう一度<a data-toggle="modal" href="#myModal_search">検索</a>してみましょう。</p>
+    </div>
+    <% end %>
+    </div>
   </div>
-  <% end %>
-  </div>
-
+</div>
     <!-- 検索画面モーダル開始 -->
   <div class="modal fade" id="myModal_search">
     <div class="modal-dialog">
