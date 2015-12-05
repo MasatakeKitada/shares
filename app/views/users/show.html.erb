@@ -1,0 +1,34 @@
+<div class="container">
+	<div class="row">
+	<div class="profile_image col-sm-4 col-xs-4">
+		<%= image_tag("#{current_user.avatar(:thumb)}") %>
+	</div>
+	<div clas="user_profile col-sm-8 col-xs-8">
+		<div class="profile_user_name">
+			<%= current_user.nickname %>
+		</div>
+		<div>
+			<p>プロフィールを編集する</p>
+		</div>
+	</div>
+	<div clss="my_pages">
+	  <div class="row page_elements">
+	    <%= render partial: "page", collection: @pages %>
+	  </div>
+
+
+
+
+
+
+
+
+	</div>
+
+
+
+
+
+
+	</div>
+</div>

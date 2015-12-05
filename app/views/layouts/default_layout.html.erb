@@ -62,7 +62,7 @@
           <li>
             <%= link_to 'メンバー追加', "/groups/#{@group.id}/users/invite/" %>
           </li>
-        <% elsif controller.controller_name == "users" %>
+        <% elsif controller.controller_name == "users" && controller.action_name != "show" %>
           <li>
             <%= link_to 'ページ一覧', "/groups/#{@group.id}/pages" %>
           </li>
@@ -85,6 +85,9 @@
       </ul>
       <div class="name">
         <p><span><%= current_user.nickname %></span>さんのマイページ</p>
+      </div>
+      <div>
+        <%= link_to 'マイページ', "/users/#{current_user.nickname}" %>
       </div>
 
     </div><!-- /.navbar-collapse -->
