@@ -1,20 +1,19 @@
 <div class="container">
   <div class="row search_elements">
-    <p class="search_result">検索結果</p>
+    <p class="search_result">検索結果（検索ワード：<%= params[:title] %>）</p>
     <% if !@pages.blank? %>
     <div id="search_list">
       <%= render 'search' %>
     </div>
     <% elsif @pages.blank? %>
     <div style="text-align: center;">
-    <p>検索結果は0件です。もう一度<a data-toggle="modal" href="#myModal_search">検索</a>してみましょう。</p>
+      <p>検索結果は0件です。もう一度<a data-toggle="modal" href="#myModal_search">検索</a>してみましょう。</p>
     </div>
     <% end %>
     </div>
   </div>
-</div>
     <!-- 検索画面モーダル開始 -->
-  <div class="modal fade" id="myModal_search">
+  <div class="modal fade keyword" id="myModal_search">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -22,8 +21,11 @@
           <p class="modal-title">キーワードで検索する</p>
         </div>
       <%= form_tag("/searches/search", method: :get) do %>
-        <input type="text", autofocus, placeholder="キーワードで検索", name="title", html: {class: "form-controll">
+        <div class="keyword_search">
+        <i class="glyphicon glyphicon-search"></i>
+        <input type="text", autofocus, placeholder="キーワードで検索", name="title", html: {class: "form-controll"}>
         <label><input type="submit" value="" id="search"></label>
+        </div>
       <% end %>
       </div>
     </div>
