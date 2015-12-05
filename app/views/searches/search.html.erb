@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row search_elements">
-    <p class="search_result">検索結果</p>
+    <p class="search_result">検索結果（検索ワード：<%= params[:title] %>）</p>
     <% if !@pages.blank? %>
     <div id="search_list">
       <%= render 'search' %>
