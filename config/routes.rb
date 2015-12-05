@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   end
 
   resources :groups, only: [:index, :show, :create, :destroy] do
+    collection do
+      get 'search'
+      get 'reset_index'
+    end
     resources :pages, only: [:index, :show, :create, :destroy]
     resources :users, only: [:index, :new, :show, :create, :destroy] do
       collection do

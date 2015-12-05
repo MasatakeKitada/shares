@@ -1,7 +1,9 @@
 <div class="container">
   <p class="my_group"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  My Group</p>
   <div class="row group_elements">
-    <%= render partial: "group", collection: @groups %>
+    <div id="search_result">
+      <%= render partial: "group" %>
+    </div>
     <div class="group_partial col-sm-3 col-xs-12">
       <div class="create_group">
          <a data-toggle="modal" href="#myModal">Create New Group</a>

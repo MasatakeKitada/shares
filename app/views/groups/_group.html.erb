@@ -1,17 +1,20 @@
-<div class="group_partial col-sm-3 col-xs-12">
-  <div class="group_page">
-    <%= link_to "/groups/#{group.id}/pages" do %>
-  <!--<%# if  group.avatar_file_name %>
-        <div class="background_image" style="background-image: url(<%#= group.avatar(:thumb) %>)"></div>
-      <%# else %>
-        <div class="background_no_image" style="background-image: url('../images/no_image.png')"></div>
-      <%# end %>-->
-        <p><%= group.name %></p>
-    <% end %>
-    <li class="group_delete">
-      <%= link_to "/groups/#{group.id}", method: :delete do %>
-        <span class="glyphicon glyphicon-trash" aria-hidden="true" style="color: white;" ></span>
+
+<% @groups.each do |group| %>
+  <div class="group_partial col-sm-3 col-xs-12">
+    <div class="group_page">
+      <%= link_to "/groups/#{group.id}/pages" do %>
+    <!--<%# if  group.avatar_file_name %>
+          <div class="background_image" style="background-image: url(<%#= group.avatar(:thumb) %>)"></div>
+        <%# else %>
+          <div class="background_no_image" style="background-image: url('../images/no_image.png')"></div>
+        <%# end %>-->
+          <p><%= group.name %></p>
       <% end %>
-    </li>
+      <li class="group_delete">
+        <%= link_to "/groups/#{group.id}", method: :delete do %>
+          <span class="glyphicon glyphicon-trash" aria-hidden="true" style="color: white;" ></span>
+        <% end %>
+      </li>
+    </div>
   </div>
-</div>
+<% end %>

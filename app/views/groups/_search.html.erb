@@ -3,7 +3,7 @@
     <p class="search_result">検索結果</p>
     <% if !@pages.blank? %>
     <div id="search_list">
-      <%= render 'search' %>
+      <%= render 'searches/search' %>
     </div>
     <% elsif @pages.blank? %>
     <div style="text-align: center;">
@@ -12,7 +12,6 @@
     <% end %>
     </div>
   </div>
-</div>
     <!-- 検索画面モーダル開始 -->
   <div class="modal fade" id="myModal_search">
     <div class="modal-dialog">
@@ -28,4 +27,5 @@
       </div>
     </div>
   </div>
+
   <!-- モーダル終了 -->
