@@ -4,8 +4,8 @@ class GroupsController < LayoutController
   # サインアップ後の/groups/search/ページへのリダイレクト
 
   def index
-    @groups = current_user.groups
     @group = Group.new
+    @groups = current_user.groups
   end
 
   # def new
@@ -23,6 +23,15 @@ class GroupsController < LayoutController
     #グループについている自分のUser_idのみ削除する。paramsは特に指定をしない場合にはidで取得される。そのため、こちらの記述はparams[:id]でOK
     group.destroy
     redirect_to action: :index
+  end
+
+  def search
+    @pages = Page.where('title LIKE(?)', "%#{params[:title]}%").group(:title)
+  end
+
+  def reset_index
+    @group = Group.new
+    @groups = current_user.groups
   end
 
   private
