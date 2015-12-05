@@ -23,7 +23,7 @@ class UsersController < LayoutController
   end
 
   def show
-    @pages = UsersPage.where(user_id: current_user.id)
+    @pages = Page.where(user_id: current_user.id)
   end
 
   private

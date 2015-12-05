@@ -127,3 +127,70 @@ h2 {
 #search {
   display: none;
 }
+
+/*マイページのCSS*/
+
+.profile_image {
+  height: 250px;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.profile_image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 150px;
+  -webkit-border-radius: 150px;
+  -moz-border-radius: 150px;
+}
+
+.user_profile {
+  height: 250px;
+  padding-top: 30px;
+}
+
+.profile_user_name {
+  font-size: 30px;
+  font-weight: bold;
+  color: #0d3c5f;
+  letter-spacing: 1.5px;
+}
+
+.profile_edit {
+  margin-top: 20px;
+  list-style: none;
+}
+
+.profile_edit a {
+  padding: 5px 5px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  color: #000000;
+  display: block;
+  width: 200px;
+  text-align: center;
+}
+
+.profile_edit a:hover {
+  text-decoration: none;
+}
+
+@media (max-width:767px) {
+
+  .profile_image {
+    height:150px;
+  }
+
+  .user_profile {
+    height: 150px;
+  }
+
+}
+
+
+
+
+
+
