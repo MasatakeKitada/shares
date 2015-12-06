@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :groups, through: :users_groups
   has_many :pages, through: :users_pages
   has_attached_file :avatar,
-  styles: {medium: "300x300#", thumb: "100x100#", small: "30x30#"}
+  styles: {medium: "300x300#", profile: "150x150#", thumb: "100x100#", small: "30x30#"}
 
   validates_attachment_content_type :avatar,
   content_type: ["image/jpeg", "image/jpg", "image/png"]

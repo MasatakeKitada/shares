@@ -46,23 +46,23 @@
               </div>
             <% end %>
           </li>
+          <div class="name">
+            <%= link_to "#{current_user.nickname}", "/users/#{current_user.nickname}" %>
+          </div>
 
      <!-- <li><a data-toggle="modal" href="#myModal">グループを追加する</a>
           </li> -->
 
         <% elsif controller.controller_name == "pages" %>
-          <!-- <li>
-            <%#= link_to 'ページを追加する', "/groups/#{@group.id}/pages/new/" %>
-            <a data-toggle="modal" href="#myModal">ページを保存する
-            </a>
-          </li> -->
+
           <li>
             <%= link_to 'メンバー一覧', "/groups/#{@group.id}/users" %>
           </li>
           <li>
             <%= link_to 'メンバー追加', "/groups/#{@group.id}/users/invite/" %>
           </li>
-        <% elsif controller.controller_name == "users" %>
+
+        <% elsif controller.controller_name == "users" && controller.action_name != "show" %>
           <li>
             <%= link_to 'ページ一覧', "/groups/#{@group.id}/pages" %>
           </li>
@@ -72,20 +72,24 @@
           <li>
             <%= link_to 'メンバー追加', "/groups/#{@group.id}/users/invite/" %>
           </li>
+
         <% elsif controller.controller_name == "searches" %>
           <li class="search">
             <a data-toggle="modal" href="#myModal_search">
               <span class="glyphicon glyphicon-search" aria-hidden="true" style="color: black;"></span>
             </a>
           </li>
+          <div class="name">
+            <%= link_to "#{current_user.nickname}", "/users/#{current_user.nickname}" %>
+          </div>
+
+        <% elsif controller.controller_name == "users" && controller.action_name == "show" %>
+          <li>
+            <%= link_to 'サインアウト',  destroy_user_session_path, method: :delete %>
+          </li>
         <% end %>
-        <li>
-          <%= link_to 'サインアウト',  destroy_user_session_path, method: :delete %>
-        </li>
+
       </ul>
-      <div class="name">
-        <p><span><%= current_user.nickname %></span>さんのマイページ</p>
-      </div>
 
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
