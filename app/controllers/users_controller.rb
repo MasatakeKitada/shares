@@ -22,6 +22,10 @@ class UsersController < LayoutController
     redirect_to action: :index
   end
 
+  def show
+    @pages = Page.where(user_id: current_user.id)
+  end
+
   private
   def id_params
     params.permit(:user_id)

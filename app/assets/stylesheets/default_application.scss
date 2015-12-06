@@ -68,17 +68,36 @@
 
 .name {
   float: right;
-  margin-top: 20px;
-  margin-right: 10px;
+  margin-top: 18px;
+  margin-right: 40px;
+  line-height: 1;
 }
 
-.name p {
-  font-size: 15px;
+.name a {
+  font-size: 20px;
+  font-weight: bold;
+  color: #0d3c5f;
+  letter-spacing: 1.5px;
+}
+
+.name a:hover {
+  font-size: 20px;
+  color: #0d3c5f;
+  letter-spacing: 1.5px;
+}
+
+.name a:hover {
+  text-decoration: none;
+  font-size: 20;
 }
 
 .name span {
   font-weight: bold;
   font-size: 18px;
+}
+
+.nav>.keyword {
+  text-align: center;
 }
 
 .keyword {
