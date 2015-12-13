@@ -14,18 +14,23 @@
   <div class="container-fluid container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+ <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+
       <div class="search sp_search">
       <a data-toggle="modal" href="#myModal_search">
         <span class="glyphicon glyphicon-search" aria-hidden="true" style="color: black;"></span>
       </a>
-    </div>
+      </div>
+      <div class="search sp_my_page">
+        <%= link_to "/users/#{current_user.nickname}" do %>
+                <span class="glyphicon glyphicon-user" aria-hidden="true" style="color: black;"></span>
+        <% end %>
+      </div>
       <div class="logo"><a href="/">Shares!</a></div>
     </div>
 
@@ -46,12 +51,10 @@
               </div>
             <% end %>
           </li>
+
           <div class="name">
             <%= link_to "#{current_user.nickname}", "/users/#{current_user.nickname}" %>
           </div>
-
-     <!-- <li><a data-toggle="modal" href="#myModal">グループを追加する</a>
-          </li> -->
 
         <% elsif controller.controller_name == "pages" %>
 
