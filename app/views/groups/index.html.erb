@@ -1,4 +1,5 @@
 <div class="container">
+  <% if !@groups.blank? %>
     <div id="search_result">
       <p class="my_group"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  My Group</p>
       <div class="row group_elements">
@@ -10,8 +11,7 @@
       </div>
       </div>
     </div>
-
-  <% if @groups.blank? %>
+  <% elsif @groups.blank? %>
     <div class="first_alert">
       <p>Shares!は、グループ間で読みたい記事やお店の情報をシェアできるサービスです。</p>
       <p>まずは、<a data-toggle="modal" href="#myModal">グループを作成</a>するか、すでにグループに所属している友人にグループに招待してもらいましょう！</p>
@@ -30,7 +30,7 @@
        		<%= form_for @group do |f| %>
             <div class="modal-body">
       		    <%= f.text_field :name, autofocus: true, :placeholder => 'グループ名', html: {class: "form-controll" } %>
-      		    <%= f.file_field :avatar, html: {class: "form-controll" } %>
+      		    <%#= f.file_field :avatar, html: {class: "form-controll" } %>
       		  </div>
             <div class="modal-footer">
       		    <%= f.submit "追加" %>
