@@ -54,3 +54,5 @@ end
   gem 'config'
   gem 'kaminari'
   gem 'rails_12factor'
+  gem 'aws-s3'
+  gem 'aws-sdk'
