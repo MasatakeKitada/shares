@@ -30,7 +30,7 @@
        		<%= form_for @group do |f| %>
             <div class="modal-body">
       		    <%= f.text_field :name, autofocus: true, :placeholder => 'グループ名', html: {class: "form-controll" } %>
-      		    <%= f.file_field :avatar, html: {class: "form-controll" } %>
+      		    <%#= f.file_field :avatar, html: {class: "form-controll" } %>
       		  </div>
             <div class="modal-footer">
       		    <%= f.submit "追加" %>
