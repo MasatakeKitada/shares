@@ -53,3 +53,4 @@ end
   gem 'omniauth-facebook'
   gem 'config'
   gem 'kaminari'
+  gem 'rails_12factor'
