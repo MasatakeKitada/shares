@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  require 'aws-sdk'
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
@@ -8,7 +9,10 @@ class User < ActiveRecord::Base
   has_many :groups, through: :users_groups
   has_many :pages, through: :users_pages
   has_attached_file :avatar,
-  styles: {medium: "300x300#", profile: "150x150#", thumb: "100x100#", small: "30x30#"}
+  styles: {medium: "300x300#", profile: "150x150#", thumb: "100x100#", small: "30x30#"},
+  :storage => :s3,
+  :s3_credentials => File.join(Rails.root, 'config', 's3.yml'),
+  :path => ":attachment/:id/:style.:extension"
 
   validates_attachment_content_type :avatar,
   content_type: ["image/jpeg", "image/jpg", "image/png"]
