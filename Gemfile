@@ -55,4 +55,4 @@ end
   gem 'kaminari'
   gem 'rails_12factor'
   gem 'aws-s3'
-  gem 'aws-sdk'
+  gem 'aws-sdk', '< 2.0'
