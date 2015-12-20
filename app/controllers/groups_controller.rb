@@ -3,10 +3,9 @@ class GroupsController < LayoutController
   # before_action :move_to_search, only: :index
   # サインアップ後の/groups/search/ページへのリダイレクト
 
-# test
   def index
     @group = Group.new
-    @groups = current_user.groups
+    @groups = current_user.groups.order("created_at DESC")
   end
 
   # def new
