@@ -153,12 +153,13 @@ h2 {
   letter-spacing: 1.5px;
 }
 
-.profile_edit {
+.go_to_group {
   margin-top: 20px;
   list-style: none;
+  display: inline-block;
 }
 
-.profile_edit a {
+.go_to_group a {
   padding: 5px 5px;
   border: 1px solid #000000;
   border-radius: 5px;
@@ -170,7 +171,7 @@ h2 {
   text-align: center;
 }
 
-.profile_edit a:hover {
+.go_to_group a:hover {
   text-decoration: none;
 }
 
@@ -179,19 +180,21 @@ h2 {
   .profile_image {
     height:150px;
   }
+
   .profile_user_name {
     font-size: 20px;
     font-weight: bold;
     color: #0d3c5f;
     letter-spacing: 1.5px;
   }
+
   .user_profile {
     height: 110px;
-    text-align: center;
+    margin-bottom: 20px;
   }
 
-  .user_profile li {
-    display: none;
+  .user_profile {
+    text-align: center;
   }
 
 }
