@@ -8,6 +8,10 @@
   padding: 10px;
 }
 
+.group_member {
+  display: none;
+}
+
 .page_partial>a {
   display: block;
 }
@@ -76,6 +80,7 @@
 }
 
 @media (max-width:767px) {
+
   .page_partial {
     height: 250px;
     margin: 0 auto;
@@ -84,7 +89,7 @@
   .page_page {
     height: 100%;
   }
-  
+
   .page_partial .page_title {
     width: 100%;
     padding-left: 15px;
@@ -96,6 +101,31 @@
     opacity: 0.9;
     position: absolute;
     bottom: 0;
+  }
+
+  .group_member {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  .group_member li {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+  }
+
+  .group_member li a {
+    color: #000000;
+    border: 1px solid black;
+    border-radius: 30px;
+    display: inline-block;
+    width: 120px;
+    line-height: 2;
+    font-size: 12px;
+  }
+
+  .group_member li a:hover {
+    text-decoration: none;
   }
 
 }

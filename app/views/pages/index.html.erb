@@ -1,4 +1,12 @@
 <div class="container">
+<!--  <div class="group_member">
+    <li class="col-xs-6">
+      <%#= link_to 'メンバー一覧', "/groups/#{@group.id}/users" %>
+    </li>
+    <li class="col-xs-6">
+      <%#= link_to 'メンバー追加', "/groups/#{@group.id}/users/invite/" %>
+    </li>
+  </div> -->
   <div class="row page_elements">
     <%= render partial: "page", collection: @pages %>
     <%= paginate @pages %>
@@ -27,6 +35,23 @@
               <%= f.submit "保存" %>
           </div>
         <% end %>
+      </div>
+    </div>
+  </div>
+  <!-- モーダル終了 -->
+
+  <!-- 検索画面モーダル開始 -->
+  <div class="modal fade" id="myModal_search">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" data-dismiss="modal">&times;</button>
+          <p class="modal-title">キーワードで検索する</p>
+        </div>
+      <%= form_tag("/searches/search", method: :get) do %>
+        <input type="text", autofocus, placeholder="キーワードで検索", name="title", html: {class: "form-controll">
+        <label><input type="submit" value="" id="search"></label>
+      <% end %>
       </div>
     </div>
   </div>

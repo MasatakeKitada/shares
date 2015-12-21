@@ -154,6 +154,11 @@ li.search a:hover {
   .sp_my_page {
     display: none;
   }
+
+  .sp_menu {
+    display: none;
+  }
+
 }
 
 @media (max-width:767px) {
@@ -163,12 +168,18 @@ li.search a:hover {
     margin: 0;
   }
 
+  .container-fluid>.navbar-header {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
   .navbar-toggle {
   position: relative;
   float: left;
   padding: 9px 10px;
   margin-top: 12px;
-  margin-left: 25px;
+  margin-left: 0;
+  margin-right: 0;
   margin-bottom: 8px;
   background-color: #000000;
   background-image: none;
@@ -209,4 +220,9 @@ li.search a:hover {
     // margin-right: 18px;
     zoom: 1.5;
   }
+
+  .sp_menu {
+    display: block;
+  }
+  
 }

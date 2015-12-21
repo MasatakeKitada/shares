@@ -8,7 +8,7 @@
     </div>
   <% end %>
 
-  <p class="search_result">検索結果</p>
+  <!-- <p class="search_result">検索結果</p> -->
   <% @users.each do |user| %>
     <div class="user clearfix">
     <div class="user_partial_invite col-xs-4">
@@ -27,4 +27,21 @@
     </div>
     </div>
   <% end %>
+
+  <!-- 検索画面モーダル開始 -->
+  <div class="modal fade" id="myModal_search">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" data-dismiss="modal">&times;</button>
+          <p class="modal-title">キーワードで検索する</p>
+        </div>
+      <%= form_tag("/searches/search", method: :get) do %>
+        <input type="text", autofocus, placeholder="キーワードで検索", name="title", html: {class: "form-controll">
+        <label><input type="submit" value="" id="search"></label>
+      <% end %>
+      </div>
+    </div>
+  </div>
+  <!-- モーダル終了 -->
 </div>
