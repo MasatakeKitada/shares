@@ -16,9 +16,26 @@
 			</li>
 		</div>
 	</div>
-		<div class="my_pages">
-		  <div class="row page_elements">
-		    <%= render partial: "page", collection: @pages %>
-		  </div>
-		</div>
+	<div class="my_pages">
+	  <div class="row page_elements">
+	    <%= render partial: "page", collection: @pages %>
+	  </div>
+	</div>
+	<!-- 検索画面モーダル開始 -->
+	<div class="modal fade" id="myModal_search">
+	<div class="modal-dialog">
+	  <div class="modal-content">
+	    <div class="modal-header">
+	      <button class="close" data-dismiss="modal">&times;</button>
+	      <p class="modal-title">キーワードで検索する</p>
+	    </div>
+	  <%= form_tag("/searches/search", method: :get) do %>
+        <i class="glyphicon glyphicon-search"></i>
+	    <input type="text", autofocus="autofocus", placeholder="キーワードで検索", name="title", html: {class: "form-controll">
+	    <label><input type="submit" value="" id="search"></label>
+	  <% end %>
+	  </div>
+	</div>
+	</div>
+	<!-- モーダル終了 -->
 </div>
