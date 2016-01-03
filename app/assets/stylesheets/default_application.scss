@@ -196,6 +196,25 @@ li.search a:hover {
     margin-top: 4px;
     background-color: #000000;
   }
+  
+  .navi li {
+    text-align: center;
+  }
+
+  .navbar-nav li a {
+    line-height: 2.5;
+  }
+
+  .navi a {
+    color: #000000;
+    margin-left: 0;
+    font-size: 14px;
+  }
+
+  .navi a:hover {
+    color: #000000;
+    font-size: 14px;
+  }
 
 
   .name {
