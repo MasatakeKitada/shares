@@ -77,6 +77,21 @@ html body {
   line-height: 2;
 }
 
+.field input {
+  margin-bottom: 20px;
+  width: 250px;
+}
+
+.actions input {
+  background-color: transparent;
+  border: none;
+  text-decoration: underline;
+}
+
+.actions input:hover {
+  text-decoration: none;
+}
+
 @media (min-width: 768px) {
   .mail_login {
     display: inline-block;
