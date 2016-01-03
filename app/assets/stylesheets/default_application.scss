@@ -181,11 +181,22 @@ li.search a:hover {
   margin-left: 0;
   margin-right: 0;
   margin-bottom: 8px;
-  background-color: #000000;
+  background-color: transparent;
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
-}
+  }
+
+  .navbar-toggle .icon-bar {
+    height: 3px;
+    background-color: #000000;
+  }
+
+  .navbar-toggle .icon-bar + .icon-bar {
+    margin-top: 4px;
+    background-color: #000000;
+  }
+
 
   .name {
     display: none;
@@ -225,4 +236,34 @@ li.search a:hover {
     display: block;
   }
   
+  .keyword {
+   margin-top: 13px;
+ }
+
+ .modal-title {
+  font-size: 15px;
+ }
+
+
+ #myModal_search .modal-content input {
+    border: 1px solid #8F9FAD;
+    width: 200px;
+    margin: 0 auto;
+    padding-left: 27px;
+    border-radius: 25px;
+    line-height: 2;
+}
+
+.modal-content {
+    position: relative;
+}
+
+/* style icon */
+.modal-content .glyphicon {
+  position: absolute;
+  padding-left: 12px;
+  padding-top: 58px;
+  pointer-events: none;
+  color: #8F9FAD;
+}
 }

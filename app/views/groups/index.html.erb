@@ -50,7 +50,8 @@
           <p class="modal-title">キーワードで検索する</p>
         </div>
       <%= form_tag("/searches/search", method: :get) do %>
-        <input type="text", autofocus, placeholder="キーワードで検索", name="title", html: {class: "form-controll">
+        <i class="glyphicon glyphicon-search"></i>
+        <input type="text", autofocus="autofocus", placeholder="キーワードで検索", name="title", html: {class: "form-controll">
         <label><input type="submit" value="" id="search"></label>
       <% end %>
       </div>
