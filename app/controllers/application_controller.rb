@@ -35,4 +35,8 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up).push(:nickname, :avatar)
   end
 
+  def after_sign_in_path_for(resource)
+    '/groups'
+  end
+
 end
