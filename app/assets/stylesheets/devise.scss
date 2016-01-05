@@ -20,7 +20,6 @@ html body {
 .message h1 {
   font-size: 60px;
   color: #ffffff;
-  font-weight: bold;
   font-family: 'Fugaz One', cursive;
   margin: 0;
   margin-left: 25px;
@@ -73,7 +72,23 @@ html body {
 
 .service_message p {
   color: #ffffff;
-  margin-top: 30px;
+  margin-top: 40px;
+  line-height: 2;
+}
+
+.field input {
+  margin-bottom: 20px;
+  width: 250px;
+}
+
+.actions input {
+  background-color: transparent;
+  border: none;
+  text-decoration: underline;
+}
+
+.actions input:hover {
+  text-decoration: none;
 }
 
 @media (min-width: 768px) {

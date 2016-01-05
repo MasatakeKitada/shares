@@ -1,9 +1,26 @@
 
 <div class="container user_container">
 	<h2>メンバー一覧</h2>
-  	<div class="user clearfix">
-    	<%= render partial: "user", collection: @users %>
-  	</div>
+<!--   	<div class="user clearfix">
+    	<%#= render partial: "user", collection: @users %>
+  	</div> -->
+
+  	<% @users.each do |user| %>
+    <div class="user clearfix">
+	  	<div class="user_partial_index col-sm-4">
+		<div class="user_image">
+			<% if user.fb_image.blank? %>
+				<%= image_tag("#{user.avatar(:thumb)}") %>
+			<% else %>
+				<%= image_tag("#{user.fb_image}") %>
+			<% end %>
+		</div>
+		<div class="user_name"><%= user.nickname %></div>
+
+	   	<%= button_to '削除する', "/groups/#{@group.id}/users/#{user.id}", method: :delete, class: "user_delete" %>
+		</div>
+	</div>
+  	<% end %>
 	<!-- 検索画面モーダル開始 -->
 	<div class="modal fade" id="myModal_search">
 	<div class="modal-dialog">
@@ -13,7 +30,8 @@
 	      <p class="modal-title">キーワードで検索する</p>
 	    </div>
 	  <%= form_tag("/searches/search", method: :get) do %>
-	    <input type="text", autofocus, placeholder="キーワードで検索", name="title", html: {class: "form-controll">
+        <i class="glyphicon glyphicon-search"></i>
+	    <input type="text", autofocus="autofocus", placeholder="キーワードで検索", name="title", html: {class: "form-controll">
 	    <label><input type="submit" value="" id="search"></label>
 	  <% end %>
 	  </div>
