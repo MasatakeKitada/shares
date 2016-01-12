@@ -14,24 +14,7 @@ html body {
   /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
   background-size: cover;
   /*position: relative;*/
-  position: fixed;
-}
-
-.message h1 {
-  font-size: 60px;
-  color: #ffffff;
-  font-family: 'Fugaz One', cursive;
-  margin: 0;
-  margin-left: 25px;
-}
-
-.message_wrapper {
-  padding-right: 0;
-  padding-left: 0;
-}
-
-.message {
-  width: 100%;
+  // position: fixed;
 }
 
 .devise_wrapper {
@@ -75,20 +58,6 @@ html body {
 
 #error_explanation ul li {
   font-size: 12px;
-}
-
-.message {
-  /*width: 400px;*/
-  padding-top: 150px;
-  /*margin-left:250px;*/
-  /*float: left;*/
-  display: inline-block;
-}
-
-.service_message p {
-  color: #ffffff;
-  margin-top: 40px;
-  line-height: 2;
 }
 
 .field input {
