@@ -5,11 +5,7 @@ class ApplicationController < ActionController::Base
   # before_action :fetch_group, if: :pages_controller? || :groups_controller? || :users_controller?
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  # サインアップ後にグループ追加に繊維させるパス
-  # before_action :after_sign_in_path_for
-  # def after_sign_in_path_for(resource)
-  #   '/groups/new'
-  # end
+
 
   def fetch_group
     @group = Group.find(params[:group_id])
