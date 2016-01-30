@@ -3,16 +3,10 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   # constraints ->  request { request.session[:user_id].present? } do
   #   # ログインしてる時のパス
-  #   root 'groups#index'
+  #   root 'groups#index', as: :groups
   # end
   # # ログインしてない時のパス
-  # root 'tops#index'
-
-  # if user_signed_in?
-  #   root 'groups#index'
-  # else
-  #   root 'tops#index'
-  # end
+  # root 'tops#index', as: :tops
 
   root 'tops#index'
   # root 'groups#index'
