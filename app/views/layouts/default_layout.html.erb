@@ -37,9 +37,6 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-<!--       <div class="avatar">
-        <%#= image_tag("#{current_user.avatar(:thumb)}") %>
-      </div> -->
       <ul class="nav navbar-nav navbar-right navi">
         <% if controller.controller_name == "groups" %>
            <li class="keyword pc_search">
@@ -54,6 +51,7 @@
           </li>
 
           <div class="name">
+            <%= image_tag("#{current_user.avatar(:small)}") %>
             <%= link_to "#{current_user.nickname}", "/users/#{current_user.nickname}" %>
           </div>
           <li class="sp_menu">
