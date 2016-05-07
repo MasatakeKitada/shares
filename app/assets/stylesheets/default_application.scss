@@ -61,6 +61,12 @@
   line-height: 1;
 }
 
+.name img {
+  margin-right: 10px;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+}
+
 .name a {
   font-size: 20px;
   font-weight: bold;
@@ -127,11 +133,6 @@ li.search a {
 
 li.search a:hover {
   color: transparent!important;
-}
-
-.facebook_login img {
-  width: 152px;
-  margin-bottom: 15px;
 }
 
 .sp_search {

@@ -14,24 +14,7 @@ html body {
   /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
   background-size: cover;
   /*position: relative;*/
-  position: fixed;
-}
-
-.message h1 {
-  font-size: 60px;
-  color: #ffffff;
-  font-family: 'Fugaz One', cursive;
-  margin: 0;
-  margin-left: 25px;
-}
-
-.message_wrapper {
-  padding-right: 0;
-  padding-left: 0;
-}
-
-.message {
-  width: 100%;
+  // position: fixed;
 }
 
 .devise_wrapper {
@@ -41,54 +24,124 @@ html body {
 
 .devise_container {
   background-color: #ffffff;
-  opacity: 0.9;
-  /*width: 250px;*/
-  /*float: right;*/
-  margin-top: 150px;
-  /*margin-right: 250px;*/
-  padding: 10px 80px 10px 80px;
-  display: inline-block;
-}
-
-.devise_container_signup {
-  background-color: #ffffff;
-  opacity: 0.9;
-  /*width: 250px;*/
+  // opacity: 0.9;
+  width: 420px;
   /*float: right;*/
   margin-top: 100px;
-  margin-bottom: 50px;
   /*margin-right: 250px;*/
-  padding: 10px 40px 30px 40px;
+  padding: 20px 60px 20px 60px;
   display: inline-block;
 }
 
-.message {
-  /*width: 400px;*/
-  padding-top: 150px;
-  /*margin-left:250px;*/
-  /*float: left;*/
-  display: inline-block;
+.devise_container>p {
+  font-size: 25px;
+  margin-bottom: 20px;
 }
 
-.service_message p {
-  color: #ffffff;
-  margin-top: 40px;
-  line-height: 2;
+// .devise_container_signup {
+//   background-color: #ffffff;
+//   opacity: 0.9;
+//   width: 420px;
+//   /*float: right;*/
+//   margin-top: 100px;
+//   margin-bottom: 50px;
+//   /*margin-right: 250px;*/
+//   padding: 10px 40px 30px 40px;
+//   display: inline-block;
+// }
+
+#error_explanation h2 {
+  font-size: 12px;
+  color: red;
+  margin-top: 0;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
 }
 
 .field input {
   margin-bottom: 20px;
-  width: 250px;
+  border: 1px solid #e3e3e3;
+  outline: 0;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  height: 30px;
+  width: 300px;
 }
 
 .actions input {
   background-color: transparent;
   border: none;
-  text-decoration: underline;
+  text-decoration: none;
+  color: #23527c;
+  font-size: 12px;
 }
 
 .actions input:hover {
-  text-decoration: none;
+  text-decoration: underline;
+  color: #23527c;
+  font-size: 12px;
+}
+
+
+.facebook_login img {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.facebook_login p {
+  color: #fff;
+  border: 1px solid rgba(0,0,0,0.3);
+  height: 50px;
+  line-height: 50px;
+  display: block;
+  text-align: center;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background: #3B5998;
+}
+
+.mail_login input {
+  border: 1px solid #e3e3e3;
+  outline: 0;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  height: 30px;
+  width: 300px;
+}
+
+.form-group>label {
+  font-size: 10px;
+  font-weight: normal;
+  text-align: left;
+}
+
+.mail_login .form_btn {
+  background-color: #FF4F4C;
+  width: 200px;
+  margin: 0 auto;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+.mail_login .form_btn input {
+  border: none;
+  color: #fff
+}
+
+.devise a {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+input#user_avatar {
+  border: none;
 }
 
 @media (min-width: 768px) {
@@ -99,12 +152,13 @@ html body {
 
 @media (max-width:767px) {
   .message {
-  padding-top: 115px;
+    padding-top: 115px;
   }
 
   .devise_container {
-    margin-top: 50px;
-    background-color: transparent;
+    margin-top: 120px;
+    background-color: #ffffff;
+    zoom: 0.8;
   }
 
   html body {
@@ -112,17 +166,17 @@ html body {
   }
 
   .mail_login {
-    display: none;
+    // display: none;
   }
 
   .devise {
-    display: none;
+    // display: none;
   }
 
-  .facebook_login img {
-    width: 200px;
-    margin-top: 100px;
-  }
+  // .facebook_login img {
+  //   width: 200px;
+  //   margin-top: 100px;
+  // }
 
 }
 

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shares</title>
+    <link href='https://fonts.googleapis.com/css?family=Fugaz+One' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body class="wide_screen clearfix">
+  	<div class="container">
+		<div class="row">
+			<div id="header">
+				<a href="#features">Sharesとは</a>
+				<a href="/users/sign_in/">ログイン</a>
+				<a href="/users/sign_up/">サインアップ</a>
+			</div>
+	  		<div id="main_visual" class="message_wrapper col-sm-12 col-xs-12">
+	      		<div class="message">
+	        		<div><h1>Shares!</h1></div>
+	        		<div class="service_message">
+	          		<p>
+	            	友達、同僚との情報共有に困ったことありませんか？<br>
+	            	Shares!を使って、スムーズな情報共有を楽しみましょう。<br>
+	          		</p>
+	        		</div>
+	      		</div>
+				<div class="start_button">
+					<a href="users/sign_in/">いますぐ始める</a>
+				</div>
+				<div class="member_button">
+					<a href="/groups">すでにメンバーの方はこちら</a>
+				</div>
+				<div class="detail">
+					<a href="#features">MORE ABOUT SHARES</a>
+				</div>
+	    	</div>
+		</div>
+<!--     	<div id="features">
+    		
+    	</div> -->
+	    <!-- <footer class="footer_container"> -->
+	      <!-- <p>copyright2015</p> -->
+	    <!-- </footer> -->
+	</div>
+  </body>
+</html>
