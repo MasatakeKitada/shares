@@ -21,6 +21,7 @@ class PagesController < LayoutController
     page = Page.last
     page.user_id = current_user.id
     page.save
+    UsersPage.create(user_id: current_user.id, page_id: page.id)
     redirect_to action: :index
   end
 
