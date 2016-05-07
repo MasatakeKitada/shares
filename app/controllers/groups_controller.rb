@@ -6,10 +6,6 @@ class GroupsController < LayoutController
   def index
     @group = Group.new
     @groups = current_user.groups.order("created_at DESC")
-    #binding.pry
-    number = Group.find_by(params[:id])
-    @number = UsersGroup.where(group_id: number).count
-    #@number = UsersGroup.where(group_id: 118).count
   end
 
   # def new
