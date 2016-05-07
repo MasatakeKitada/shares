@@ -24,11 +24,27 @@ class UsersController < LayoutController
 
   def show
     @pages = Page.where(user_id: current_user.id).order("created_at DESC")
+    # @page = Page.new
   end
+
+  # def create
+  #   Scraping.page_titles(page_params)
+  #   page = Page.last
+  #   page.user_id = current_user.id
+  #   page.save
+  #   UsersPage.create(user_id: current_user.id, page_id: page.id)
+  #   redirect_to action: :show
+  # end
 
   private
   def id_params
     params.permit(:user_id)
   end
+
+  # def page_params
+  #   params.require(:page).permit(:url)
+  # end
+
+
 
 end
