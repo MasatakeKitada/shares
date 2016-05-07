@@ -6,6 +6,10 @@ class GroupsController < LayoutController
   def index
     @group = Group.new
     @groups = current_user.groups.order("created_at DESC")
+    #binding.pry
+    number = Group.find_by(params[:id])
+    @number = UsersGroup.where(group_id: number).count
+    #@number = UsersGroup.where(group_id: 118).count
   end
 
   # def new
@@ -26,13 +30,14 @@ class GroupsController < LayoutController
   end
 
   def search
-    @pages = Page.where('title LIKE(?)', "%#{params[:title]}%").group(:title)
+    @pages = Page.where('title LIKE(?)', "%#{params[:title]}%").where(user_id: current_user.id).group(:title)
   end
 
   def reset_index
     @group = Group.new
     @groups = current_user.groups
   end
+
 
   private
   def group_params

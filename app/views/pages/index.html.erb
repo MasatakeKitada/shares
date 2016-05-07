@@ -1,5 +1,5 @@
 <div class="container">
-<!--  <div class="group_member">
+<!--   <div class="group_member">
     <li class="col-xs-6">
       <%#= link_to 'メンバー一覧', "/groups/#{@group.id}/users" %>
     </li>
@@ -7,9 +7,24 @@
       <%#= link_to 'メンバー追加', "/groups/#{@group.id}/users/invite/" %>
     </li>
   </div> -->
+  <div class="header_title">
+    <%= @group.name %>
+  </div>
+    <div class="group_member">
+      <li>
+        <%= link_to 'メンバー一覧', "/groups/#{@group.id}/users" %>
+      </li>
+      <li>
+        <%= link_to 'メンバー追加', "/groups/#{@group.id}/users/invite/" %>
+      </li>
+      <li class="back_to_group" style="float: left; margin-left: 15px">
+        <a href="/groups/">My Groupへ</a>
+        <%#= link_to 'グループ一覧', "/groups/", { :class => "back_to_group" } %>
+      </li>
+    </div>
   <div class="row page_elements">
     <%= render partial: "page", collection: @pages %>
-    <%= paginate @pages %>
+    <%#= paginate @pages %> <!-- ページネーション用 -->
   </div>
 
   <% if @pages.blank? %>

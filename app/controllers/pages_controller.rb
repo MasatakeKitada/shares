@@ -1,6 +1,7 @@
 class PagesController < LayoutController
   def index
-    @pages = Page.where(group_id: params[:group_id]).page(params[:page]).per(6).order("created_at DESC")
+    #@pages = Page.where(group_id: params[:group_id]).page(params[:page]).per(6).order("created_at DESC")
+    @pages = Page.where(group_id: params[:group_id]).order("created_at DESC") #ページネーションなし
     @group = Group.find(params[:group_id])
     @page = Page.new
   end

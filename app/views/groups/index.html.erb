@@ -1,7 +1,7 @@
 <div class="container">
   <% if !@groups.blank? %>
+    <p class="my_group"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  My Group</p>
     <div id="search_result">
-      <p class="my_group"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  My Group</p>
       <div class="row group_elements">
         <%= render partial: "group" %>
       <div class="group_partial col-sm-3 col-xs-12">
@@ -26,7 +26,9 @@
           <button class="close" data-dismiss="modal">&times;</button>
           <p class="modal-title">グループを追加する</p>
         </div>
-
+        <div>
+          <%#= image_tag'group.png' %>
+        </div>
        		<%= form_for @group do |f| %>
             <div class="modal-body">
       		    <%= f.text_field :name, autofocus: true, :placeholder => 'グループ名', html: {class: "form-controll" } %>
