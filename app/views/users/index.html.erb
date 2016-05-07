@@ -1,9 +1,22 @@
 
 <div class="container user_container">
-	<h2>メンバー一覧</h2>
+  <div class="header_title">
+    <p>メンバー一覧</p>
+  </div>
 <!--   	<div class="user clearfix">
     	<%#= render partial: "user", collection: @users %>
   	</div> -->
+    <div class="group_member">
+      <li>
+        <%= link_to 'メンバー一覧', "/groups/#{@group.id}/users" %>
+      </li>
+      <li>
+        <%= link_to 'メンバー追加', "/groups/#{@group.id}/users/invite/" %>
+      </li>
+      <li class="back_to_group" style="float: left; margin-left: 15px">
+        <%= link_to 'ページ一覧へ', "/groups/#{@group.id}/pages" %>
+      </li>
+    </div>
 
   	<% @users.each do |user| %>
     <div class="user clearfix">

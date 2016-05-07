@@ -1,13 +1,19 @@
 <div class="container user_container">
-  <%= form_tag("/groups/#{@group.id}/users/invite", method: :get) do %>
-    <h2>ユーザー名で検索</h2>
-    <div class="user_keyword">
-      <i class="glyphicon glyphicon-search"></i>
-      <input type="text", placeholder="ユーザー名を入力", name="nickname">
-      <input type="submit" value="" id="search">
-    </div>
-  <% end %>
+  <div class="header_title">
+    <p>メンバー追加</p>
+  </div>
 
+    <div class="group_member">
+      <li>
+        <%= link_to 'メンバー一覧', "/groups/#{@group.id}/users" %>
+      </li>
+      <li>
+        <%= link_to 'メンバー追加', "/groups/#{@group.id}/users/invite/" %>
+      </li>
+      <li class="back_to_group" style="float: left; margin-left: 15px">
+        <%= link_to 'ページ一覧へ', "/groups/#{@group.id}/pages" %>
+      </li>
+    </div>
   <!-- <p class="search_result">検索結果</p> -->
   <% @users.each do |user| %>
     <div class="user clearfix">
@@ -45,4 +51,29 @@
     </div>
   </div>
   <!-- モーダル終了 -->
+
+  <!-- ユーザー検索モーダル開始 -->
+  <div class="modal fade" id="user_search">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" data-dismiss="modal">&times;</button>
+          <p class="modal-title">ユーザーを検索する</p>
+        </div>
+  <%= form_tag("/groups/#{@group.id}/users/invite", method: :get) do %>
+    <div class="user_keyword">
+      <i class="glyphicon glyphicon-search"></i>
+      <input type="text", placeholder="ユーザー名を入力", name="nickname">
+      <input type="submit" value="" id="search">
+    </div>
+  <% end %>
+      </div>
+    </div>
+  </div>
+  <!-- モーダル終了 -->
+
+  <div class="plus_btn">
+  <a data-toggle="modal" href="#user_search"><%= image_tag'plus.png' %></a>
+  </div>
+
 </div>

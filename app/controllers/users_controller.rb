@@ -23,7 +23,7 @@ class UsersController < LayoutController
   end
 
   def show
-    @pages = Page.where(user_id: current_user.id)
+    @pages = Page.where(user_id: current_user.id).order("created_at DESC")
   end
 
   private
