@@ -51,7 +51,11 @@
           </li>
 
           <div class="name">
-            <%= image_tag("#{current_user.avatar(:small)}") %>
+            <% if current_user.fb_image.blank? %>
+              <%= image_tag("#{current_user.avatar(:small)}") %>
+            <% else %>
+              <%= image_tag("#{current_user.fb_image}") %>
+            <% end %>
             <%= link_to "#{current_user.nickname}", "/users/#{current_user.nickname}" %>
           </div>
           <li class="sp_menu">
