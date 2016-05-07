@@ -38,24 +38,35 @@
   background-position: center;
 }
 
-.group_page p {
+.group_name {
   width: 100%;
   height: 100%;
   color: #ffffff;
-  font-size: 20px;
-  text-align: center;
-  line-height: 5;
+  font-size: 15px;
+  // text-align: center;
+  line-height: 7;
   margin-bottom: 0;
+  padding-left: 30px;
 }
 
-.group_page p:hover {
+.group_page:hover {
   // color: #18bc9c;
   color: #ffffff;
   background-color: #58626B;
 }
 
-.group_page a:hover {
+.group_name a:hover {
   text-decoration: none;
+}
+
+.group_number {
+  height: 100%;
+  font-size: 12px;
+  float: right;
+  line-height: 9;
+  margin-right: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .group_delete {
