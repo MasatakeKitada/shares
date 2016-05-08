@@ -11,15 +11,27 @@
     <%= @group.name %>
   </div>
     <div class="group_member">
-      <li>
-        <%= link_to 'メンバー一覧', "/groups/#{@group.id}/users" %>
-      </li>
-      <li>
-        <%= link_to 'メンバー追加', "/groups/#{@group.id}/users/invite/" %>
-      </li>
-      <li class="back_to_group" style="float: left; margin-left: 15px">
+      <li class="back_to_group">
         <a href="/groups/">My Groupへ</a>
         <%#= link_to 'グループ一覧', "/groups/", { :class => "back_to_group" } %>
+      </li>
+      <li class="member_show">
+        <%= link_to 'メンバー一覧', "/groups/#{@group.id}/users" %>
+      </li>
+      <li class="member_invite">
+        <%= link_to 'メンバー追加', "/groups/#{@group.id}/users/invite/" %>
+      </li>
+    </div>
+    <div class="sp_group_member">
+      <li class="back_to_group col-xs-4">
+        <a href="/groups/">My Groupへ</a>
+        <%#= link_to 'グループ一覧', "/groups/", { :class => "back_to_group" } %>
+      </li>
+      <li class="member_show col-xs-4">
+        <%= link_to 'メンバー一覧', "/groups/#{@group.id}/users" %>
+      </li>
+      <li class="member_invite col-xs-4">
+        <%= link_to 'メンバー追加', "/groups/#{@group.id}/users/invite/" %>
       </li>
     </div>
   <div class="row page_elements">
