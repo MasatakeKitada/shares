@@ -62,6 +62,9 @@
             <a data-toggle="modal" href="#myModal">新規グループ作成</a>
           </li> -->
           <li class="sp_menu">
+            <%= link_to "グループ一覧", "/groups/" %>
+          </li>
+          <li class="sp_menu">
             <%= link_to "マイページ", "/users/#{current_user.nickname}" %>
           </li>
           <li class="sp_menu">
