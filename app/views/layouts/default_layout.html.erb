@@ -58,9 +58,9 @@
             <% end %>
             <%= link_to "#{current_user.nickname}", "/users/#{current_user.nickname}" %>
           </div>
-          <li class="sp_menu">
+          <!-- <li class="sp_menu">
             <a data-toggle="modal" href="#myModal">新規グループ作成</a>
-          </li>
+          </li> -->
           <li class="sp_menu">
             <%= link_to "マイページ", "/users/#{current_user.nickname}" %>
           </li>
@@ -101,7 +101,7 @@
           </div> -->
 
         <% if controller.controller_name == "users" && controller.action_name == "show" %>
-          <li>
+          <li class="pc_menu">
             <%= link_to 'サインアウト',  destroy_user_session_path, method: :delete %>
           </li>
         <% end %>

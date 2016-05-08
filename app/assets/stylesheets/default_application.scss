@@ -224,7 +224,10 @@ li.search a:hover {
     font-size: 14px;
     background-color: transparent;
   }
-
+  
+  .pc_menu {
+    display: none;
+  }
 
   .name {
     display: none;
@@ -275,11 +278,12 @@ li.search a:hover {
 
  #myModal_search .modal-content input {
     border: 1px solid #8F9FAD;
-    width: 200px;
-    margin: 0 auto;
+    width: 350px;
+    margin-left: 5px;
     padding-left: 27px;
-    border-radius: 25px;
+    border-radius: 5px;
     line-height: 2;
+    font-size: 100%;
 }
 
 .modal-content {
