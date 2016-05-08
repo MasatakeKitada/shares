@@ -37,12 +37,6 @@
   text-align: center;
 }
 
-.group_member li {
-  list-style: none;
-  float: right;
-  margin-right: 15px;
-}
-
 .group_member li a {
   color: #ffffff;
   background-color: #454545;
@@ -57,7 +51,24 @@
   text-decoration: none;
 }
 
-.group_member .back_to_group li {
+.sp_group_member {
+  display: none;
+}
+
+.member_show {
+  list-style: none;
+  float: right;
+  margin-right: 15px;
+}
+
+.member_invite {
+  list-style: none;
+  float: right;
+  margin-right: 15px;
+}
+
+.back_to_group {
+  list-style: none;
   height: 30px;
   float: left;
   margin-left: 15px;
@@ -84,7 +95,7 @@
 
 .page_title {
   width: 100%;
-  height: 45px; 
+  height: 45px;
   padding-left: 15px;
   padding-right: 15px;
   padding-top: 5px;
@@ -165,5 +176,50 @@
     bottom: 0;
   }
 
+  .group_member {
+    display: none;
+  }
+
+  .sp_group_member {
+    display: block;
+    height: 40px;
+    text-align: center;
+  }
+
+  .sp_group_member li a {
+    color: #ffffff;
+    background-color: #454545;
+    border-radius: 30px;
+    display: inline-block;
+    width: 120px;
+    line-height: 2.5;
+    font-size: 12px;
+  }
+
+  .sp_group_member li a:hover {
+    text-decoration: none;
+  }
+
+  .member_show {
+    list-style: none;
+    float: left;
+    margin: 0;
+    padding: 0;
+  }
+
+  .member_invite {
+    list-style: none;
+    float: left;
+    margin: 0;
+    padding: 0;
+  }
+
+  .back_to_group {
+    list-style: none;
+    height: 30px;
+    float: left;
+    margin: 0;
+    padding: 0;
+  }
 
 }
