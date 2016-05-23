@@ -23,7 +23,8 @@ class UsersController < LayoutController
   end
 
   def show
-    @pages = Page.where(user_id: current_user.id).order("created_at DESC")
+    @page = Page.new
+    @pages = Page.where(user_id: current_user.id).group("url").order("created_at DESC")
     # @page = Page.new
   end
 
@@ -41,9 +42,9 @@ class UsersController < LayoutController
     params.permit(:user_id)
   end
 
-  # def page_params
-  #   params.require(:page).permit(:url)
-  # end
+  def page_params
+    params.require(:page).permit(:url)
+  end
 
 
 

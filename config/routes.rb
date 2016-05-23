@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   resources :groups, only: [:edit, :update]
   resources :users, only: :show
+  resources :pages, only: [:create,:index]
   resources :groups, only: [:index, :show, :create, :destroy, :edit, :update] do
     collection do
       get 'search'
