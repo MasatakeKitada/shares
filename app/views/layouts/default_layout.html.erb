@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Shars!</title>
+  <title>shars!</title>
   <link href='https://fonts.googleapis.com/css?family=Fugaz+One' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.getElementById("modalTitle").focus()</script>
 </head>
 <body>
 <header class="header_container">
@@ -21,7 +22,7 @@
         <span class="icon-bar"></span>
     </button>
 
-      <div class="logo col-xs-9"><a href="/groups">Shars!</a></div>
+      <div class="logo col-xs-9"><a href="/groups">shars!</a></div>
       <!-- <div class="search sp_my_page col-xs-2">
         <%#= link_to "/users/#{current_user.nickname}" do %>
                 <span class="glyphicon glyphicon-user" aria-hidden="true" style="color: black;"></span>
