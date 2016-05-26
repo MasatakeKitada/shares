@@ -12,7 +12,11 @@
             <p class="group_number"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <%= group.users_groups.count %></p>
           </div>
       <% end %>
-      <ul>
+      <div class="dropdown">
+        <a data-toggle="dropdown" class="group_menu" href="#">
+          <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="color: white;" ></span>
+        </a>
+      <ul class="dropdown-menu">
         <li class="group_edit">
           <%#= link_to "/groups/#{group.id}/edit/", method: :get do %>
             <!--<p>編集する</p>-->
@@ -29,7 +33,9 @@
           <%# end %>
         </li>
       </ul>
+      </div>
     </div>
+
       <!-- グループ編集モーダル開始 -->
   <div class="modal fade" id="myModal_edit_<%= group.id %>">
     <div class="modal-dialog">

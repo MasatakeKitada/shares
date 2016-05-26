@@ -69,11 +69,17 @@
   margin-bottom: 0;
 }
 
-.group_delete {
+.group_menu {
   list-style: none;
   position: absolute;
-  top: 10px;
+  top: -85px;
   right: 10px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: -60px;
+  right: 0;
 }
 
 .first_alert {
