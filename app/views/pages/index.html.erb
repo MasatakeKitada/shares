@@ -18,9 +18,9 @@
       <li class="member_show">
         <%= link_to 'メンバー一覧', "/groups/#{@group.id}/users" %>
       </li>
-      <li class="member_invite">
-        <%= link_to 'メンバー追加', "/groups/#{@group.id}/users/invite/" %>
-      </li>
+<!--       <li class="member_invite">
+        <%#= link_to 'メンバー追加', "/groups/#{@group.id}/users/invite/" %>
+      </li> -->
     </div>
     <div class="sp_group_member">
       <li class="back_to_group col-xs-4">
@@ -30,9 +30,9 @@
       <li class="member_show col-xs-4">
         <%= link_to 'メンバー一覧', "/groups/#{@group.id}/users" %>
       </li>
-      <li class="member_invite col-xs-4">
-        <%= link_to 'メンバー追加', "/groups/#{@group.id}/users/invite/" %>
-      </li>
+<!--       <li class="member_invite col-xs-4">
+        <%#= link_to 'メンバー追加', "/groups/#{@group.id}/users/invite/" %>
+      </li> -->
     </div>
   <div class="row page_elements">
     <%= render partial: "page", collection: @pages %>

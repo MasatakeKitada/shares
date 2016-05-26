@@ -13,7 +13,7 @@ class UsersController < LayoutController
 
   def add
     UsersGroup.create(user_id: id_params[:user_id], group_id: params[:group_id])
-    redirect_to action: :invite
+    redirect_to action: :index
   end
 
   def destroy
