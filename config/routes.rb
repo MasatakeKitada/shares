@@ -16,8 +16,10 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :groups, only: [:edit, :update]
   resources :users, only: :show
-  resources :groups, only: [:index, :show, :create, :destroy] do
+  resources :pages, only: [:create,:index]
+  resources :groups, only: [:index, :show, :create, :destroy, :edit, :update] do
     collection do
       get 'search'
       get 'reset_index'

@@ -10,23 +10,23 @@
       <li class="back_to_group">
         <%= link_to 'ページ一覧へ', "/groups/#{@group.id}/pages" %>
       </li>
-      <li class="member_show">
-        <%= link_to 'メンバー一覧', "/groups/#{@group.id}/users" %>
-      </li>
-      <li class="member_invite">
-        <%= link_to 'メンバー追加', "/groups/#{@group.id}/users/invite/" %>
-      </li>
+<!--       <li class="member_show">
+        <%#= link_to 'メンバー一覧', "/groups/#{@group.id}/users" %>
+      </li> -->
+<!--       <li class="member_invite">
+        <%#= link_to 'メンバー追加', "/groups/#{@group.id}/users/invite/" %>
+      </li> -->
     </div>
     <div class="sp_group_member">
       <li class="back_to_group col-xs-4">
         <%= link_to 'ページ一覧へ', "/groups/#{@group.id}/pages" %>
       </li>
-      <li class="member_show col-xs-4">
-        <%= link_to 'メンバー一覧', "/groups/#{@group.id}/users" %>
-      </li>
-      <li class="member_invite col-xs-4">
-        <%= link_to 'メンバー追加', "/groups/#{@group.id}/users/invite/" %>
-      </li>
+<!--       <li class="member_show col-xs-4">
+        <%#= link_to 'メンバー一覧', "/groups/#{@group.id}/users" %>
+      </li> -->
+<!--       <li class="member_invite col-xs-4">
+        <%#= link_to 'メンバー追加', "/groups/#{@group.id}/users/invite/" %>
+      </li> -->
     </div>
 
   	<% @users.each do |user| %>
@@ -40,8 +40,12 @@
 			<% end %>
 		</div>
 		<div class="user_name"><%= user.nickname %></div>
-
-	   	<%= button_to '削除する', "/groups/#{@group.id}/users/#{user.id}", method: :delete, class: "user_delete" %>
+      <li class="page_delete">
+      <%= link_to "/groups/#{@group.id}/users/#{user.id}", method: :delete do %>
+      <span class="glyphicon glyphicon-remove-circle" aria-hidden="true" style="color: black;"></span>
+      <% end %>
+      </li>
+	   	<%#= button_to '削除する', "/groups/#{@group.id}/users/#{user.id}", method: :delete, class: "user_delete" %>
 		</div>
 	</div>
   	<% end %>
@@ -62,4 +66,28 @@
 	</div>
 	</div>
 	<!-- モーダル終了 -->
+
+  <!-- ユーザー検索モーダル開始 -->
+  <div class="modal fade" id="user_search">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" data-dismiss="modal">&times;</button>
+          <p class="modal-title">ユーザーを検索する</p>
+        </div>
+  <%= form_tag("/groups/#{@group.id}/users/invite", method: :get) do %>
+    <div class="user_keyword modal-body">
+      <!-- <i class="glyphicon glyphicon-search"></i> -->
+      <input type="text", autofocus="autofocus", placeholder="ユーザー名を入力", name="nickname", id="myModal">
+      <input type="submit" value="" id="search">
+    </div>
+  <% end %>
+      </div>
+    </div>
+  </div>
+  <!-- モーダル終了 -->
+
+  <div class="plus_btn">
+  <a data-toggle="modal" href="#user_search"><%= image_tag'plus.png' %></a>
+  </div>
 </div>

@@ -18,9 +18,9 @@
       <li class="member_show">
         <%= link_to 'メンバー一覧', "/groups/#{@group.id}/users" %>
       </li>
-      <li class="member_invite">
-        <%= link_to 'メンバー追加', "/groups/#{@group.id}/users/invite/" %>
-      </li>
+<!--       <li class="member_invite">
+        <%#= link_to 'メンバー追加', "/groups/#{@group.id}/users/invite/" %>
+      </li> -->
     </div>
     <div class="sp_group_member">
       <li class="back_to_group col-xs-4">
@@ -30,9 +30,9 @@
       <li class="member_show col-xs-4">
         <%= link_to 'メンバー一覧', "/groups/#{@group.id}/users" %>
       </li>
-      <li class="member_invite col-xs-4">
-        <%= link_to 'メンバー追加', "/groups/#{@group.id}/users/invite/" %>
-      </li>
+<!--       <li class="member_invite col-xs-4">
+        <%#= link_to 'メンバー追加', "/groups/#{@group.id}/users/invite/" %>
+      </li> -->
     </div>
   <div class="row page_elements">
     <%= render partial: "page", collection: @pages %>
@@ -56,7 +56,8 @@
         </div>
         <%= form_for [@group, @page] do |f| %>
           <div class="modal-body">
-              <%= f.text_field :url, autofocus: true, :placeholder => 'http://...' %>
+              <%= f.text_field :url, autofocus: true, :placeholder => 'http://...', html: {id: "modalTitle"}  %>
+              <script>document.getElementById("modalTitle").focus()</script>
           </div>
           <div class="modal-footer">
               <%= f.submit "保存" %>
@@ -77,7 +78,7 @@
         </div>
       <%= form_tag("/searches/search", method: :get) do %>
         <i class="glyphicon glyphicon-search"></i>
-        <input type="text", autofocus="autofocus", placeholder="キーワードで検索", name="title", html: {class: "form-controll">
+        <input type="text", autofocus="autofocus", placeholder="キーワードで検索", name="title", html: {class: "form-controll"} >
         <label><input type="submit" value="" id="search"></label>
       <% end %>
       </div>

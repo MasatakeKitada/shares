@@ -18,6 +18,17 @@ class GroupsController < LayoutController
     UsersGroup.create(user_id: current_user.id, group_id: group.id)
   end
 
+  def edit
+    redirect_to action: :index unless UsersGroup.find_by(user_id: current_user, group_id: params[:id])
+    @group = Group.find_by(id: params[:id])
+  end
+
+  def update
+    group = Group.find_by(id: params[:id])
+    group.update(group_params)
+    redirect_to action: :index
+  end
+
   def destroy
     group = UsersGroup.find_by(user_id: current_user.id, group_id: params[:id])
     #グループについている自分のUser_idのみ削除する。paramsは特に指定をしない場合にはidで取得される。そのため、こちらの記述はparams[:id]でOK

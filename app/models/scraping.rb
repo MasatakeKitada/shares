@@ -11,20 +11,20 @@ class Scraping
     else
         got_url = '../images/no_image.png'
     end
-    
-    group = Group.find page_params[:group_id]
-    # group.pages.where(title: title).first_or_initialize(image_url: got_url, url: page_params[:url])
-    page = group.pages.where(title: title).first_or_initialize(image_url: got_url)
-    page.url = page_params[:url]
-    page.save
 
-    #return Page.last
-    # page = Page.where(title: title).first_or_initialize
-    # page.image_url = got_url
-    # page.url = page_params[:url]
-    # page.group_id = page_params[:group_id]
-    # page.save
-
+    unless page_params[:group_id].nil? then
+        group = Group.find page_params[:group_id]
+        # group.pages.where(title: title).first_or_initialize(image_url: got_url, url: page_params[:url])
+        page = group.pages.where(title: title).first_or_initialize(image_url: got_url)
+        page.url = page_params[:url]
+        page.save
+    else
+        page = Page.where(title: title).first_or_initialize
+        page.image_url = got_url
+        page.url = page_params[:url]
+        page.group_id = nil
+        page.save
+    end
     # page.save{image_url: got_url, url: page_params[:url], group_id: page_params[:group_id]}
   end
 end

@@ -40,4 +40,28 @@
 	</div>
 	</div>
 	<!-- モーダル終了 -->
+
+  <!-- モーダル開始 -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" data-dismiss="modal">&times;</button>
+          <p class="modal-title">ページを保存する</p>
+        </div>
+        <%= form_for @page do |f| %>
+          <div class="modal-body">
+              <%= f.text_field :url, autofocus: true, :placeholder => 'http://...' %>
+          </div>
+          <div class="modal-footer">
+              <%= f.submit "保存" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <!-- モーダル終了 -->
+  <div class="plus_btn">
+    <a data-toggle="modal" href="#myModal"><%= image_tag'plus.png' %></a>
+  </div>
 </div>

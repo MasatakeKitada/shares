@@ -12,11 +12,51 @@
             <p class="group_number"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <%= group.users_groups.count %></p>
           </div>
       <% end %>
-      <!-- <li class="group_delete"> -->
-        <%#= link_to "/groups/#{group.id}", method: :delete do %>
-          <!-- <span class="glyphicon glyphicon-trash" aria-hidden="true" style="color: white;" ></span> -->
-        <%# end %>
-      <!-- </li> -->
+      <div class="dropdown">
+        <a data-toggle="dropdown" class="group_menu" href="#">
+          <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="color: white;" ></span>
+        </a>
+      <ul class="dropdown-menu">
+        <li class="group_edit">
+          <%#= link_to "/groups/#{group.id}/edit/", method: :get do %>
+            <!--<p>編集する</p>-->
+            <!-- <span class="glyphicon glyphicon-pencil" aria-hidden="true" style="color: black;" ></span> -->
+          <%# end %>
+          <a data-toggle="modal" href="#myModal_edit_<%= group.id %>">編集する</a>
+        </li>
+        <li class="">
+          <%= link_to 'メンバー一覧', "/groups/#{group.id}/users" %>
+        </li>
+        <li class=""> <!-- class=group_delete -->
+          <%= link_to '削除する', "/groups/#{group.id}", method: :delete %>
+            <!-- <span class="glyphicon glyphicon-trash" aria-hidden="true" style="color: white;" ></span> -->
+          <%# end %>
+        </li>
+      </ul>
+      </div>
     </div>
+
+      <!-- グループ編集モーダル開始 -->
+  <div class="modal fade" id="myModal_edit_<%= group.id %>">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" data-dismiss="modal">&times;</button>
+          <p class="modal-title">グループ名を編集する</p>
+        </div>
+        <%= form_for group do |f| %>
+          <div class="modal-body">
+            <%= f.text_field :name, autofocus: true, :placeholder => 'グループ名', html: {class: "form-controll" } %>
+          </div>
+          <div class="modal-footer">
+          <%= f.submit "編集" %>
+            <%#= render "edit", f: f %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <!-- モーダル終了 -->
+
   </div>
 <% end %>

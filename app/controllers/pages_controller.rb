@@ -23,6 +23,8 @@ class PagesController < LayoutController
     page.save
     UsersPage.create(user_id: current_user.id, page_id: page.id)
     redirect_to action: :index
+    # redirect_to action: :index unless params[:group_id].nil?
+    # redirect_to controller: :users, action: :show, id: current_user.id
   end
 
   def destroy
