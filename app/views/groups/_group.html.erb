@@ -31,19 +31,21 @@
       <div class="modal-content">
         <div class="modal-header">
           <button class="close" data-dismiss="modal">&times;</button>
-          <p class="modal-title">グループを編集する</p>
+          <p class="modal-title">グループ名を編集する</p>
         </div>
-        <div>
-          <%#= image_tag'group.png' %>
-        </div>
-          <%= form_for group do |f| %>
-            <%= render "edit", f: f %>
-          <% end %>
+        <%= form_for group do |f| %>
+          <div class="modal-body">
+            <%= f.text_field :name, autofocus: true, :placeholder => 'グループ名', html: {class: "form-controll" } %>
+          </div>
+          <div class="modal-footer">
+          <%= f.submit "編集" %>
+            <%#= render "edit", f: f %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
   <!-- モーダル終了 -->
-
 
   </div>
 <% end %>
