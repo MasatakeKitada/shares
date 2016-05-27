@@ -34,7 +34,6 @@ class UsersController < LayoutController
   end
 
   def update
-  # binding.pry
     user = User.find_by(id: current_user.id)
     user.update(user_params)
     redirect_to action: :show
