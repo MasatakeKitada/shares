@@ -28,6 +28,19 @@ class UsersController < LayoutController
     # @page = Page.new
   end
 
+  def edit
+    # @user = User.find_by(id: params[:current_user.id])
+    @user = current_user
+  end
+
+  def update
+  # binding.pry
+    user = User.find_by(id: current_user.id)
+    user.update(user_params)
+    redirect_to action: :show
+  end
+
+
   # def create
   #   Scraping.page_titles(page_params)
   #   page = Page.last
@@ -40,6 +53,10 @@ class UsersController < LayoutController
   private
   def id_params
     params.permit(:user_id)
+  end
+
+  def user_params
+    params.require(:user).permit(:nickname, :email, :encrypted_password, :avatar)
   end
 
   def page_params

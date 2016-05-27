@@ -1,0 +1,27 @@
+          <div class="mail_login">
+          <%= form_for @user do |f| %>
+              <%#= devise_error_messages! %>
+              <div class="form-group"><%= f.label :ユーザー名, class: "controll-label" %><br />
+                <%= f.text_field :nickname, autofocus: true, :placeholder => 'ユーザー名', class: "form-controll" %></div>
+              <div class="form-group">
+                <%= f.label :メールアドレス %><br />
+                <%= f.email_field :email, autofocus: true, :placeholder => 'register@shares.com' %>
+              <!-- </div> -->
+            </div>
+              <div class="form-group">
+                <%= f.label :パスワード %>
+                <% if @minimum_password_length %>
+                <!-- <em>(<%#= @minimum_password_length %> characters minimum)</em> -->
+                <% end %><br />
+                <%= f.password_field :password, autocomplete: "off", :placeholder => '8文字以上' %>
+              </div>
+              <div class="form-group">
+                <%= f.label :profile_image %><br />
+                <%= f.file_field :avatar, autofocus: true, value: "" %>
+              </div>
+
+          <div class="form-group form_btn">
+            <%= f.submit "Sign up" %>
+          </div>
+            <% end %>
+          </div>
