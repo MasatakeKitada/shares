@@ -23,8 +23,10 @@ class UsersController < LayoutController
   end
 
   def show
+    @groups = current_user.groups
     @page = Page.new
     @pages = Page.where(user_id: current_user.id).group("url").order("created_at DESC")
+    @user = current_user
     # @page = Page.new
   end
 

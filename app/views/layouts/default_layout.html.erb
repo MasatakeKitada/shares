@@ -39,7 +39,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right navi">
-        <%# if controller.controller_name == "groups" %>
+        <% if controller.controller_name != "users" %>
            <li class="keyword pc_search">
             <%#= link_to '記事検索', "/searches/" %>
             <%= form_tag("/searches/search", method: :get) do %>
@@ -50,6 +50,7 @@
               </div>
             <% end %>
           </li>
+          <% end %>
 
           <div class="name">
             <% if current_user.fb_image.blank? %>
