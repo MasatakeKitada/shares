@@ -58,3 +58,4 @@ end
   gem 'aws-s3'
   gem 'aws-sdk', '< 2.0'
   gem "validate_url"
+  gem 'cancancan'
