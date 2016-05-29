@@ -10,9 +10,9 @@
       <li class="member_show">
         <%= link_to 'メンバー一覧', "/groups/#{@group.id}/users" %>
       </li>
-      <li class="member_invite">
-        <%= link_to 'メンバー追加', "/groups/#{@group.id}/users/invite/" %>
-      </li>
+<!--       <li class="member_invite">
+        <%#= link_to 'メンバー追加', "/groups/#{@group.id}/users/invite/" %>
+      </li> -->
     </div>
     <div class="sp_group_member">
       <li class="back_to_group col-xs-4">
@@ -21,29 +21,36 @@
       <li class="member_show col-xs-4">
         <%= link_to 'メンバー一覧', "/groups/#{@group.id}/users" %>
       </li>
-      <li class="member_invite col-xs-4">
-        <%= link_to 'メンバー追加', "/groups/#{@group.id}/users/invite/" %>
-      </li>
+<!--       <li class="member_invite col-xs-4">
+        <%#= link_to 'メンバー追加', "/groups/#{@group.id}/users/invite/" %>
+      </li> -->
     </div>
   <!-- <p class="search_result">検索結果</p> -->
-  <% @users.each do |user| %>
-    <div class="user clearfix">
-    <div class="user_partial_invite col-xs-4">
-      <div class="user_image">
-        <% if user.fb_image.blank? %>
-          <%= image_tag("#{user.avatar(:thumb)}") %>
-        <% else %>
-          <%= image_tag("#{user.fb_image}") %>
+  <% if !@users.blank? %>
+    <% @users.each do |user| %>
+      <div class="user clearfix">
+      <div class="user_partial_invite col-xs-4">
+        <div class="user_image">
+          <% if user.fb_image.blank? %>
+            <%= image_tag("#{user.avatar(:thumb)}") %>
+          <% else %>
+            <%= image_tag("#{user.fb_image}") %>
+          <% end %>
+        </div>
+        <div class="user_name"><%= user.nickname %></div>
+        <%= form_tag("/groups/#{@group.id}/users/add", method: :post) do %> <!-- userのidとgroupのidを連携 -->
+          <%= hidden_field_tag(:user_id, user.id) %>
+          <%= submit_tag("追加する") %>
         <% end %>
       </div>
-      <div class="user_name"><%= user.nickname %></div>
-      <%= form_tag("/groups/#{@group.id}/users/add", method: :post) do %> <!-- userのidとgroupのidを連携 -->
-        <%= hidden_field_tag(:user_id, user.id) %>
-        <%= submit_tag("追加する") %>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
+  <% elsif @users.blank? %>
+    <div style="text-align: center;">
+      <p>検索結果は0件です。もう一度<a data-toggle="modal" href="#user_search">検索</a>してみましょう！</p>
     </div>
   <% end %>
+
 
   <!-- 検索画面モーダル開始 -->
   <div class="modal fade" id="myModal_search">
@@ -72,9 +79,9 @@
           <p class="modal-title">ユーザーを検索する</p>
         </div>
   <%= form_tag("/groups/#{@group.id}/users/invite", method: :get) do %>
-    <div class="user_keyword">
-      <i class="glyphicon glyphicon-search"></i>
-      <input type="text", placeholder="ユーザー名を入力", name="nickname">
+    <div class="user_keyword modal-body">
+      <!-- <i class="glyphicon glyphicon-search"></i> -->
+      <input type="text", autofocus="autofocus", placeholder="ユーザー名を入力", name="nickname", id="myModal">
       <input type="submit" value="" id="search">
     </div>
   <% end %>

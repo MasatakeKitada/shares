@@ -162,20 +162,31 @@ h2 {
   display: inline-block;
 }
 
-.go_to_group a {
-  padding: 5px 5px;
-  border: 1px solid #000000;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  color: #000000;
-  display: block;
-  width: 200px;
-  text-align: center;
-}
+// .go_to_group a {
+//   padding: 5px 5px;
+//   border: 1px solid #000000;
+//   border-radius: 5px;
+//   -webkit-border-radius: 5px;
+//   -moz-border-radius: 5px;
+//   color: #000000;
+//   display: block;
+//   width: 200px;
+//   text-align: center;
+// }
 
 .go_to_group a:hover {
   text-decoration: none;
+}
+
+.user_devise_wrapper {
+  padding-right: 0;
+  padding-left: 0;
+  text-align: center;
+  // margin-top: 50px;
+}
+
+.avatar-layout {
+  margin-left: 133px;
 }
 
 @media (max-width:767px) {
