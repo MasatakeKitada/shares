@@ -23,11 +23,11 @@ class PagesController < LayoutController
     page.save!
     UsersPage.create(user_id: current_user.id, page_id: page.id)
     # redirect_to action: :index
-    if params[:group_id].present?
+    if params[:group_id].present? #ページにgroup_idが入っているかを判定し、入っていれば、こちらの処理がされる
       redirect_to action: :index
       return
     end
-    redirect_to controller: :users, action: :show, id: current_user.id
+    redirect_to controller: :users, action: :show, id: current_user.id #入っていなければ、returnでfalseが返り値で戻り、こちらの処理が実行される
   end
 
   def destroy
