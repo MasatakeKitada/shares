@@ -1638,6 +1638,8 @@
 
 			// create the css arrow pointing at the field
 			// note that there is no triangle on max-checkbox and radio
+
+			//アラートの赤い矢印
 			if (options.showArrow) {
 				var arrow = $('<div>').addClass("formErrorArrow");
 
@@ -1662,6 +1664,8 @@
 						break;
 				}
 			}
+			//矢印終了
+
 			// Add custom prompt class
 			if (options.addPromptClass)
 				prompt.addClass(options.addPromptClass);
