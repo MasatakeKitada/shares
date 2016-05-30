@@ -84,9 +84,7 @@
     :address => 'smtp.gmail.com',
     :port => 587,
     :authentication => :plain,
-    # :user_name => 'xxx',
-    # :password => 'xxx'
-    :user_name => ENV['MAIL_USER_NAME'],
+    :user_name => ENV['MAIL_USER_NAME'], #heroku configに値を入れているので、更新の際は、それを更新する。heroku configで値を確認可能
     :password => ENV['MAIL_PASSWORD']
   }
 end
